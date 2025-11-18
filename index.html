@@ -29,6 +29,15 @@
     footer{margin-top:18px;color:var(--muted);font-size:13px}
     @media (max-width:640px){body{padding:18px}.app{max-width:100%}}
   </style>
+  .text-island {
+  background: rgba(255, 255, 255, 0.15); /* translucent box */
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 20px auto;
+  color: white;
+  backdrop-filter: blur(10px); /* glass effect */}
+
 </head>
 <body>
   <main class="app">
@@ -38,7 +47,7 @@
         <div class="meta">Client-side demo — instant search over site content.</div>
       </div>
     </header>
-
+<div class="text-island">
     <div class="search-box">
       <div class="controls">
         <input id="q" type="search" placeholder="Search the site (try: javascript, recipe, about)" autocomplete="off" />
