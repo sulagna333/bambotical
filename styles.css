@@ -1,5 +1,5 @@
 /* =========================================
-   GLOBAL RESET & BASE STYLE
+   RESET & BASE
 ========================================= */
 * {
   margin: 0;
@@ -11,28 +11,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Palette variables */
 :root {
-  /* Your palette */
   --cream: #fef9f3;
   --vanilla: #f3e7c9;
+  --raspberry: #c7435c;
+  --grapefruit: #e47884;
   --lime: #a9b952;
   --lemon: #f7a928;
-  --grapefruit: #e47884;
-  --raspberry: #c7435c;
-
   --text-main: #2b2b2b;
   --text-muted: #555555;
   --card-bg: #ffffff;
   --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
-/* DARK MODE VARIABLES */
+
+/* Dark mode overrides using CSS variables */
 .dark-mode {
-  --background: #1d1b1b;
-  --text-color: #f5f5f5;
-  --card-bg: #282525;
-  --nav-bg: #201e1e;
-  --button-bg: #b7324e;
-  --button-text: #ffffff;
+  --cream: #1a1a1a;
+  --vanilla: #222222;
+  --raspberry: #9a2f46;
+  --grapefruit: #d46b7b;
+  --lime: #909c45;
+  --lemon: #d38d20;
+  --text-main: #f5f5f5;
+  --text-muted: #d7d7d7;
+  --card-bg: #242424;
+  --shadow-soft: 0 8px 22px rgba(0, 0, 0, 0.4);
 }
 
 body {
@@ -42,14 +46,13 @@ body {
   color: var(--text-main);
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 1300px;
   margin: auto;
 }
 
-/* Simple section heading helper */
+/* Section heading */
 .section-heading {
   text-align: center;
   margin-bottom: 40px;
@@ -69,13 +72,12 @@ body {
 }
 
 /* =========================================
-   NAVBAR
+   HEADER / NAVBAR
 ========================================= */
 .site-header {
-  width: 100%;
   background: var(--raspberry);
   color: #fff;
-  padding: 15px 0;
+  padding: 14px 0;
   position: relative;
   z-index: 10;
 }
@@ -89,46 +91,51 @@ body {
 .brand {
   display: flex;
   align-items: center;
+  gap: 10px;
   text-decoration: none;
   color: #ffffff;
 }
 
-.brand-logo {
-  width: 45px;
-  height: 45px;
-  border-radius: 8px;
-  object-fit: cover;
-  margin-right: 10px;
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #ffffff22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .brand-name {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
 .brand-tagline {
   font-size: 0.8rem;
-  color: #ffeef3;
+  color: #ffe6ec;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 16px;
   align-items: center;
 }
 
 .nav-links a {
   color: #ffffff;
   text-decoration: none;
+  font-size: 0.9rem;
   font-weight: 500;
-  font-size: 0.95rem;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -145,7 +152,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #ffeef3;
+  color: #ffe6ec;
 }
 
 .nav-links a:hover::after {
@@ -166,21 +173,17 @@ body {
   gap: 4px;
   cursor: pointer;
   font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.nav-link-btn i {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 .nav-dropdown {
   position: absolute;
-  top: 34px;
+  top: 32px;
   left: 0;
   background: #ffffff;
   list-style: none;
-  padding: 10px 0;
-  width: 190px;
+  padding: 8px 0;
+  width: 180px;
   border-radius: 10px;
   box-shadow: var(--shadow-soft);
   display: none;
@@ -192,7 +195,7 @@ body {
 
 .nav-dropdown a {
   color: var(--text-main);
-  padding: 8px 16px;
+  padding: 8px 14px;
   display: block;
   text-decoration: none;
   font-size: 0.9rem;
@@ -219,8 +222,25 @@ body {
   border-radius: 999px;
 }
 
+/* Dark mode toggle button */
+.theme-btn {
+  background: none;
+  border: 2px solid #ffffff;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: #ffffff;
+  color: var(--raspberry);
+}
+
 /* =========================================
-   HERO SECTION
+   HERO
 ========================================= */
 .hero {
   background: url("https://images.pexels.com/photos/1084510/pexels-photo-1084510.jpeg")
@@ -236,7 +256,7 @@ body {
   inset: 0;
   background: linear-gradient(
     120deg,
-    rgba(199, 67, 92, 0.6),
+    rgba(199, 67, 92, 0.7),
     rgba(244, 179, 133, 0.4)
   );
 }
@@ -251,52 +271,45 @@ body {
   font-size: 3rem;
   max-width: 600px;
   line-height: 1.2;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   font-family: "Playfair Display", serif;
 }
 
 .hero-subtitle {
   max-width: 550px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   color: #ffeef3;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-/* Stats */
-.hero-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.stat {
-  background: rgba(254, 249, 243, 0.18);
-  border: 1px solid rgba(254, 249, 243, 0.5);
-  padding: 10px 14px;
-  border-radius: 10px;
-  backdrop-filter: blur(4px);
-}
-
-.stat-number {
-  font-weight: 600;
-}
-
-.stat-label {
-  font-size: 0.8rem;
-}
-
-/* Eyebrow text */
 .eyebrow {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-size: 0.75rem;
   color: var(--lemon);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: #ffffff33;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.stat-number {
+  font-weight: 600;
 }
 
 /* =========================================
@@ -313,8 +326,7 @@ body {
   font-size: 0.9rem;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
@@ -324,27 +336,10 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.btn-outline {
-  background: transparent;
-  border: 2px solid #ffffff;
-  box-shadow: none;
-}
-
-.btn-outline:hover {
-  background: #ffffff;
-  color: var(--raspberry);
-}
-
-.btn-small {
-  padding: 8px 16px;
-  font-size: 0.85rem;
-}
-
 .btn-secondary {
   background: #ffffff;
   color: var(--raspberry);
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .btn-secondary:hover {
@@ -352,79 +347,60 @@ body {
   color: #ffffff;
 }
 
-/* Disabled small button */
-.btn-disabled {
-  background: #ddd;
-  color: #777;
-  cursor: default;
-  box-shadow: none;
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.85rem;
 }
 
 /* =========================================
-   SECTION SPACING
+   SECTIONS
 ========================================= */
 section {
   padding: 70px 0;
 }
 
-/* Alternate backgrounds using cream & vanilla */
-body > section:nth-of-type(odd) {
+section:nth-of-type(odd) {
   background: var(--cream);
 }
 
-body > section:nth-of-type(even) {
+section:nth-of-type(even) {
   background: var(--vanilla);
 }
 
-/* =========================================
-   WHY SECTION
-========================================= */
+/* WHY SECTION */
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
+  gap: 24px;
 }
 
 .why-card {
   background: var(--card-bg);
-  padding: 25px;
+  padding: 22px;
   border-radius: 12px;
-  text-align: left;
   box-shadow: var(--shadow-soft);
 }
 
 .why-icon {
   font-size: 1.8rem;
   color: var(--lime);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.why-card h3 {
-  margin-bottom: 6px;
-}
-
-.why-card p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* =========================================
-   WIKI + SEARCH
-========================================= */
+/* WIKI + SEARCH */
 .wiki-heading {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .wiki-heading p {
-  max-width: 480px;
   color: var(--text-muted);
 }
 
 .wiki-search-wrapper {
-  width: 100%;
+  max-width: 480px;
 }
 
 .search-box {
@@ -447,16 +423,21 @@ body > section:nth-of-type(even) {
   outline: none;
   width: 100%;
   font-size: 0.9rem;
+  background: transparent;
 }
 
-/* =========================================
-   PLANT GRID
-========================================= */
+.search-note {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* PLANT GRID */
 .plant-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 25px;
-  margin-top: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .plant-card {
@@ -473,7 +454,7 @@ body > section:nth-of-type(even) {
 }
 
 .plant-body {
-  padding: 18px 18px 20px;
+  padding: 16px 16px 18px;
 }
 
 .plant-body h3 {
@@ -489,33 +470,23 @@ body > section:nth-of-type(even) {
 .plant-info {
   font-size: 0.9rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .plant-actions {
   display: flex;
-  justify-content: flex-start;
 }
 
-/* Search note */
-.search-note {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* =========================================
-   SEASONAL CARDS
-========================================= */
+/* SEASONAL */
 .season-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
+  gap: 24px;
 }
 
 .season-card {
   background: var(--card-bg);
-  padding: 25px;
+  padding: 22px;
   border-radius: 12px;
   box-shadow: var(--shadow-soft);
 }
@@ -525,11 +496,7 @@ body > section:nth-of-type(even) {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--raspberry);
-  margin-bottom: 4px;
-}
-
-.season-card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .season-card ul {
@@ -539,322 +506,31 @@ body > section:nth-of-type(even) {
   color: var(--text-muted);
 }
 
-/* =========================================
-   CARE ICON GRID
-========================================= */
+/* CARE */
 .care-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  gap: 24px;
 }
 
 .care-card {
   background: var(--card-bg);
   border-radius: 12px;
-  padding: 25px;
+  padding: 22px;
   box-shadow: var(--shadow-soft);
-  text-align: left;
 }
 
 .care-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.9rem;
   color: var(--lime);
-}
-
-/* =========================================
-   FEATURED SECTION
-========================================= */
-.featured-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-  gap: 25px;
-}
-
-.featured-main {
-  background: linear-gradient(135deg, var(--raspberry), var(--grapefruit));
-  color: #ffffff;
-  border-radius: 16px;
-  padding: 26px 24px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
-}
-
-.featured-main p {
-  color: #ffedf3;
-}
-
-.featured-main h2 {
-  font-family: "Playfair Display", serif;
-  margin: 6px 0 8px;
-}
-
-.featured-list {
-  list-style: none;
-  margin: 14px 0 18px;
-  font-size: 0.9rem;
-}
-
-.featured-list li {
-  margin-bottom: 4px;
-}
-
-.featured-list i {
-  color: var(--lemon);
-  margin-right: 6px;
-}
-
-.featured-side {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 22px 20px;
-  box-shadow: var(--shadow-soft);
-}
-
-.mini-plant-list {
-  margin-top: 12px;
-  display: grid;
-  gap: 8px;
-  font-size: 0.9rem;
-}
-
-.mini-plant-info span {
-  color: var(--text-muted);
-  font-size: 0.83rem;
-}
-
-/* =========================================
-   TESTIMONIALS
-========================================= */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
-
-.testimonial-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 22px 20px;
-  box-shadow: var(--shadow-soft);
-}
-
-.testimonial-profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   margin-bottom: 8px;
 }
 
-.avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: var(--grapefruit);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
-
-.testimonial-role {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.testimonial-text {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-}
-
-.testimonial-rating i {
-  color: var(--lemon);
-  font-size: 0.9rem;
-}
-
-/* =========================================
-   NEWSLETTER
-========================================= */
-.newsletter {
-  background: var(--raspberry);
-  color: #ffffff;
-}
-
-.newsletter-inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.newsletter-text p {
-  max-width: 480px;
-  color: #ffeaf1;
-}
-
-.newsletter-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.newsletter-form input {
-  border-radius: 999px;
-  border: none;
-  padding: 8px 14px;
-  min-width: 230px;
-  outline: none;
-}
-
-/* =========================================
-   BLOG
-========================================= */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
-
-.blog-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
-
-.blog-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.blog-body {
-  padding: 18px 16px 20px;
-}
-
-.blog-category {
-  font-size: 0.8rem;
-  color: var(--raspberry);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 4px;
-}
-
-.blog-body h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
-
-.blog-body p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.blog-link {
-  font-size: 0.9rem;
-  color: var(--grapefruit);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* =========================================
-   FAQ
-========================================= */
-.faq-grid {
-  display: grid;
-  gap: 12px;
-}
-
-.faq-item {
-  background: var(--card-bg);
-  padding: 12px 14px;
-  border-radius: 10px;
-  box-shadow: var(--shadow-soft);
-}
-
-.faq-item summary {
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.faq-item p {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* =========================================
-   CONTACT
-========================================= */
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
-  gap: 30px;
-}
-
-.contact-list {
-  list-style: none;
-  margin-top: 10px;
-  font-size: 0.9rem;
-}
-
-.contact-list li {
-  margin-bottom: 6px;
-}
-
-.contact-list i {
-  color: var(--raspberry);
-  margin-right: 8px;
-}
-
-.contact-form {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 20px 18px;
-  box-shadow: var(--shadow-soft);
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.form-group label {
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 8px 10px;
-  font-size: 0.9rem;
-  outline: none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--raspberry);
-}
-
-/* =========================================
-   FOOTER
-========================================= */
+/* FOOTER */
 .site-footer {
   background: var(--raspberry);
-  padding: 35px 0 32px;
-  color: #ffeef3;
+  color: #ffeaf1;
+  padding: 28px 0;
   text-align: center;
 }
 
@@ -865,29 +541,20 @@ body > section:nth-of-type(even) {
   align-items: center;
 }
 
-.footer-brand .brand-name {
-  font-family: "Playfair Display", serif;
-  font-size: 1.3rem;
-}
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .footer-links a {
-  color: #ffeef3;
+  color: #ffeaf1;
   text-decoration: none;
   font-size: 0.85rem;
 }
 
-.footer-copy {
-  font-size: 0.78rem;
-}
-
 /* =========================================
-   PLANT PAGE STYLING
+   PLANT PAGES
 ========================================= */
 .plant-page {
   background: var(--cream);
@@ -944,7 +611,7 @@ body > section:nth-of-type(even) {
 .care-icons-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 14px;
+  gap: 12px;
   margin: 12px 0 14px;
 }
 
@@ -961,10 +628,6 @@ body > section:nth-of-type(even) {
   margin-right: 6px;
 }
 
-.care-icon-card h4 {
-  margin-bottom: 4px;
-}
-
 .season-list {
   margin-top: 6px;
   padding-left: 18px;
@@ -974,7 +637,7 @@ body > section:nth-of-type(even) {
 
 .plant-sidebar {
   background: var(--card-bg);
-  padding: 20px;
+  padding: 18px;
   border-radius: 12px;
   box-shadow: var(--shadow-soft);
 }
@@ -994,51 +657,64 @@ body > section:nth-of-type(even) {
 }
 
 /* =========================================
-   ANIMATIONS — Fade + Slide + Hover Effects
+   LOADING SCREEN
 ========================================= */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--raspberry);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
 
-/* Initial hidden state */
+.loader-wrapper {
+  text-align: center;
+}
+
+.loader-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  animation: spin 0.9s linear infinite;
+  margin: 0 auto 12px;
+}
+
+.loader-text {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+}
+
+#loading-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   REVEAL ANIMATION
+========================================= */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.5s ease;
 }
 
-/* Visible state */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Card hover (already has transitions from before) */
-.plant-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.plant-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-}
-
-/* Image hover zoom */
-.plant-image {
-  transition: transform 0.5s ease;
-}
-
-.plant-card:hover .plant-image {
-  transform: scale(1.05);
-}
-
-/* Care + seasonal card hover */
-.care-card,
-.season-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.care-card:hover,
-.season-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 /* Hero text fade-in */
@@ -1046,7 +722,7 @@ body > section:nth-of-type(even) {
 .hero-subtitle {
   opacity: 0;
   transform: translateY(20px);
-  animation: heroFade 1.2s ease forwards;
+  animation: heroFade 1.1s ease forwards;
 }
 
 .hero h1 {
@@ -1064,6 +740,32 @@ body > section:nth-of-type(even) {
   }
 }
 
+/* MICRO-INTERACTION HOVERS */
+a,
+button,
+.plant-card,
+.care-card,
+.season-card,
+img {
+  transition: all 0.25s ease;
+}
+
+.plant-card:hover img {
+  transform: scale(1.06) rotate(0.5deg);
+  filter: brightness(1.06);
+}
+
+.plant-card:hover,
+.care-card:hover,
+.season-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
 /* =========================================
    RESPONSIVE
 ========================================= */
@@ -1072,141 +774,32 @@ body > section:nth-of-type(even) {
     grid-template-columns: 1fr;
   }
 
-  .featured-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
+  .hero {
+    height: 70vh;
   }
 }
 
 @media (max-width: 780px) {
   .nav-links {
     display: none;
+    position: absolute;
+    right: 10px;
+    top: 56px;
+    background: var(--raspberry);
+    padding: 10px 16px;
+    border-radius: 12px;
+    flex-direction: column;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
   }
 
   .nav-toggle {
     display: flex;
   }
 
-  .hero {
-    height: 70vh;
-  }
-
   .wiki-heading {
-    flex-direction: column;
+    align-items: flex-start;
   }
 }
-/* =========================================
-   MICRO-INTERACTION HOVER EFFECTS
-========================================= */
-
-/* Smooth transitions for everything interactive */
-a, button, .plant-card, .care-card, .season-card, img {
-  transition: all 0.25s ease;
-}
-
-/* 1. Gentle tilt for plant images */
-.plant-card:hover img {
-  transform: scale(1.06) rotate(0.8deg);
-  filter: brightness(1.06);
-}
-
-/* 2. Card hover — small lift + soft shadow movement */
-.plant-card:hover,
-.care-card:hover,
-.season-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-}
-
-/* 3. Button micro interaction */
-.btn:hover {
-  transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
-}
-
-/* 4. Link micro-underline (smooth) */
-a:hover {
-  opacity: 0.9;
-}
-
-/* 5. Navbar link micro interaction */
-.nav-links a:hover {
-  transform: translateY(-2px);
-}
-
-/* 6. Featured images pop slightly */
-.blog-card:hover img,
-.featured-main:hover img {
-  transform: scale(1.04);
-}
-
-/* 7. FAQ slight lift */
-.faq-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-}
-/* =========================================
-   LOADING SCREEN (Raspberry Theme)
-========================================= */
-
-#loading-screen {
-  position: fixed;
-  inset: 0;
-  background: var(--raspberry);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-/* Loader container */
-.loader-wrapper {
-  text-align: center;
-}
-
-/* Circle Loader */
-.loader-circle {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #ffffff;
-  animation: spin 0.9s linear infinite;
-  margin: 0 auto 15px;
-}
-
-/* Brand text */
-.loader-text {
-  font-family: "Playfair Display", serif;
-  font-size: 1.6rem;
-  color: #ffffff;
-  letter-spacing: 2px;
-  animation: fadeIn 1s ease alternate infinite;
-}
-
-/* Spin animation */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Glow animation for text */
-@keyframes fadeIn {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
