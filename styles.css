@@ -1181,3 +1181,53 @@ body > section:nth-of-type(even) {
     transform: translateY(0);
   }
 }
+/* =========================================
+   MICRO-INTERACTION HOVER EFFECTS
+========================================= */
+
+/* Smooth transitions for everything interactive */
+a, button, .plant-card, .care-card, .season-card, img {
+  transition: all 0.25s ease;
+}
+
+/* 1. Gentle tilt for plant images */
+.plant-card:hover img {
+  transform: scale(1.06) rotate(0.8deg);
+  filter: brightness(1.06);
+}
+
+/* 2. Card hover — small lift + soft shadow movement */
+.plant-card:hover,
+.care-card:hover,
+.season-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* 3. Button micro interaction */
+.btn:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* 4. Link micro-underline (smooth) */
+a:hover {
+  opacity: 0.9;
+}
+
+/* 5. Navbar link micro interaction */
+.nav-links a:hover {
+  transform: translateY(-2px);
+}
+
+/* 6. Featured images pop slightly */
+.blog-card:hover img,
+.featured-main:hover img {
+  transform: scale(1.04);
+}
+
+/* 7. FAQ slight lift */
+.faq-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
