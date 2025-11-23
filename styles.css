@@ -25,6 +25,15 @@ html {
   --card-bg: #ffffff;
   --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
+/* DARK MODE VARIABLES */
+.dark-mode {
+  --background: #1d1b1b;
+  --text-color: #f5f5f5;
+  --card-bg: #282525;
+  --nav-bg: #201e1e;
+  --button-bg: #b7324e;
+  --button-text: #ffffff;
+}
 
 body {
   font-family: "Poppins", sans-serif;
