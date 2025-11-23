@@ -142,3 +142,13 @@ if (yearSpan) {
     transform: translateY(0);
   }
 }
+/* ========================================
+   LOADING SCREEN SCRIPT
+======================================== */
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loading-screen");
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 400); // delay for smoother look
+});
