@@ -143,16 +143,6 @@ if (yearSpan) {
   }
 }
 /* ========================================
-   LOADING SCREEN SCRIPT
-======================================== */
-
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loading-screen");
-  setTimeout(() => {
-    loader.classList.add("hide");
-  }, 400); // delay for smoother look
-});
-/* ========================================
    SCROLL REVEAL ANIMATION
 ======================================== */
 
@@ -173,3 +163,15 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+
+/* ========================================
+   LOADING SCREEN SCRIPT
+======================================== */
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loading-screen");
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 400); 
+});
