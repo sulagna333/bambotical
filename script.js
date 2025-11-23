@@ -152,3 +152,24 @@ window.addEventListener("load", () => {
     loader.classList.add("hide");
   }, 400); // delay for smoother look
 });
+/* ========================================
+   SCROLL REVEAL ANIMATION
+======================================== */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  revealElements.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    } else {
+      el.classList.remove("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
