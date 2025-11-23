@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bambotical – Plants Wiki</title>
+  <title>Bambotical – Plant Wiki</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,762 +13,330 @@
     rel="stylesheet"
   />
 
-  <!-- Font Awesome (Icons) -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 
-  <!-- Your CSS file -->
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body> 
-  <!-- ================= HEADER / NAVBAR ================= -->
-  <header class="site-header" id="top">
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="loader-wrapper">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Bambotical</div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand">
-        <!-- Replace src with your direct logo image URL if you have it -->
-        <img
-         src="https://i.ibb.co/Z6VWgx7L/Packaging-Projects-Photos-videos-logos-illustrations-and-branding.jpg"
-          alt="Bambotical Logo"
-          class="brand-logo"
-        />
-        <div class="brand-text">
-          <span class="brand-name">Bambotical</span>
-          <span class="brand-tagline">Your friendly plants wiki</span>
+      <a href="index.html" class="brand">
+        <div class="brand-mark">B</div>
+        <div>
+          <div class="brand-name">Bambotical</div>
+          <div class="brand-tagline">Your friendly plant wiki</div>
         </div>
       </a>
 
       <nav class="nav">
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <button id="theme-toggle" class="theme-btn">
-    🌙
-</button>
-
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
-          <li><a href="#wiki">Plant Wiki</a></li>
-          <li><a href="#seasonal">Seasonal Plants</a></li>
-          <li><a href="#care">Care Guides</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-
-          <!-- NEW: Plant Pages dropdown -->
+          <li><a href="#wiki">Plants</a></li>
+          <li><a href="#care">Care</a></li>
+          <li><a href="#seasonal">Seasonal</a></li>
           <li class="has-dropdown">
-            <button class="nav-link-btn" type="button">
+            <button class="nav-link-btn">
               Plant Pages <i class="fa-solid fa-chevron-down"></i>
             </button>
             <ul class="nav-dropdown">
-              <li><a href="monstera.html">Monstera Deliciosa</a></li>
+              <li><a href="monstera.html">Monstera</a></li>
               <li><a href="snake-plant.html">Snake Plant</a></li>
               <li><a href="aloe-vera.html">Aloe Vera</a></li>
             </ul>
           </li>
         </ul>
 
-        <a href="#wiki" class="btn btn-small btn-outline">Browse Plants</a>
+        <!-- Dark mode toggle -->
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+
+        <!-- Mobile nav toggle -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="hero reveal" id="hero" >
+  <!-- HERO -->
+  <section class="hero reveal" id="hero">
     <div class="hero-overlay"></div>
-    <!-- Background image is set in CSS (.hero) -->
     <div class="container hero-inner">
-      <div class="hero-content">
-        <p class="eyebrow">Welcome to Bambotical</p>
-        <h1>Discover plants that thrive in your space, all year round.</h1>
-        <p class="hero-subtitle">
-          Bambotical is a simple plants wiki where you can explore care guides,
-          seasonal recommendations, and plant facts — all in one green corner of
-          the web.
-        </p>
+      <p class="eyebrow">Plant Wiki · Indoor & Balcony</p>
+      <h1>Grow a tiny jungle with Bambotical.</h1>
+      <p class="hero-subtitle">
+        Explore easy-care plants, seasonal tips, and simple guides created for
+        students, beginners, and plant lovers who just want green without chaos.
+      </p>
 
-        <div class="hero-actions">
-          <a href="#wiki" class="btn">Start Exploring</a>
-          <a href="#newsletter" class="btn btn-outline">Get Weekly Plant Tips</a>
+      <div class="hero-actions">
+        <a href="#wiki" class="btn">Browse plant wiki</a>
+        <a href="#care" class="btn btn-secondary">Care basics</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Starter plants</div>
         </div>
-
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-number">250+</span>
-            <span class="stat-label">Plant profiles</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">40+</span>
-            <span class="stat-label">Seasonal guides</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">4.9</span>
-            <span class="stat-label">Community rating</span>
-          </div>
+        <div class="stat">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Seasonal tips</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= WHY BAMBOTICAL ================= -->
-  <section class="why reveal" id="why" >
+  <!-- WHY SECTION -->
+  <section class="reveal" id="about">
     <div class="container">
       <div class="section-heading">
-        <h2>Why learn with Bambotical?</h2>
-        <p>
-          Forget confusing plant jargon. Bambotical keeps things simple, visual,
-          and practical so you always know what your plants really need.
-        </p>
+        <h2>Why Bambotical?</h2>
+        <p>Because plant care shouldn’t feel like an exam — it should feel like a calm hobby.</p>
       </div>
 
       <div class="why-grid">
-        <article class="why-card">
-          <div class="why-icon">
-            <i class="fa-solid fa-leaf"></i>
-          </div>
-          <h3>Wiki-style plant info</h3>
-          <p>
-            Clear, structured plant pages with light, water, soil, and pet safety
-            details in one place.
-          </p>
-        </article>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Student-friendly</h3>
+          <p>Simple, quick notes written so you can revise care tips like a cheat sheet.</p>
+        </div>
 
-        <article class="why-card">
-          <div class="why-icon">
-            <i class="fa-regular fa-calendar-days"></i>
-          </div>
-          <h3>Seasonal suggestions</h3>
-          <p>
-            Discover which plants love summer heat, monsoon moisture, or winter
-            windowsills.
-          </p>
-        </article>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h3>Low-maintenance picks</h3>
+          <p>Only plants that survive busy schedules, late nights, and forgotten watering days.</p>
+        </div>
 
-        <article class="why-card">
-          <div class="why-icon">
-            <i class="fa-solid fa-droplet"></i>
-          </div>
-          <h3>Care made simple</h3>
-          <p>
-            Bite-sized care tips so you know exactly when to water, mist, and
-            repot.
-          </p>
-        </article>
-
-        <article class="why-card">
-          <div class="why-icon">
-            <i class="fa-solid fa-shield-heart"></i>
-          </div>
-          <h3>Beginner friendly</h3>
-          <p>
-            Ideal for new plant parents who want low-stress greenery without
-            guesswork.
-          </p>
-        </article>
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-sun"></i></div>
+          <h3>Season-wise care</h3>
+          <p>Quick guides for summer, monsoon, and winter so your plants don’t panic when the weather changes.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= PLANT WIKI + SEARCH ENGINE ================= -->
-  <section class="wiki reveal" id="wiki">
+  <!-- WIKI + SEARCH -->
+  <section class="reveal" id="wiki">
     <div class="container">
-      <div class="section-heading wiki-heading">
-        <div>
-          <h2>Explore the Bambotical Plant Wiki</h2>
-          <p>
-            Use the search box to quickly find plants by name or type. The search
-            works entirely on the page — no backend required.
-          </p>
+      <div class="wiki-heading">
+        <div class="section-heading" style="text-align:left;">
+          <h2>Plant Wiki</h2>
+          <p>Search and explore beginner-friendly plants. Click “More details” to open a dedicated page for each plant.</p>
         </div>
+
         <div class="wiki-search-wrapper">
-          <label for="plant-search" class="sr-only">Search plants</label>
           <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input
               type="text"
               id="plant-search"
-              placeholder="Search by name or category (e.g., 'succulent', 'indoor')"
+              placeholder="Search by plant name, type or tags (e.g. low light, pet safe)..."
             />
           </div>
+          <p id="search-note" class="search-note" hidden>
+            No plant matched that search. Try a simpler word like “indoor”.
+          </p>
         </div>
       </div>
 
-      <div class="plant-grid" id="plant-grid">
-        <!-- MONSTERA -->
+      <div class="plant-grid">
+        <!-- Monstera card -->
         <article
           class="plant-card"
           data-name="Monstera Deliciosa"
-          data-tags="indoor tropical big leaves"
+          data-tags="indoor tropical big leaves statement plant medium care"
         >
           <img
             src="https://i.ibb.co/F4yPSWvH/4a73d910356e9744ab418a7f1244ad74.jpg"
-            alt="Monstera Deliciosa"
+            alt="Monstera Deliciosa plant"
             class="plant-image"
           />
           <div class="plant-body">
             <h3>Monstera Deliciosa</h3>
-            <p class="plant-tags">Indoor • Tropical • Medium care</p>
+            <div class="plant-tags">Indoor · Tropical · Statement leaves</div>
             <p class="plant-info">
-              Loves bright, indirect light and weekly watering. Famous for its
-              dramatic split leaves that can turn any corner into a jungle.
+              Big, split leaves and fast growth. Loves bright, indirect light and a bit of humidity.
             </p>
             <div class="plant-actions">
-              <a href="monstera.html" class="btn btn-small btn-secondary">
-                More details
-              </a>
+              <a href="monstera.html" class="btn btn-small">More details</a>
             </div>
           </div>
         </article>
 
-        <!-- SNAKE PLANT -->
+        <!-- Snake Plant card -->
         <article
           class="plant-card"
           data-name="Snake Plant"
-          data-tags="indoor low maintenance air purifying"
+          data-tags="low light indoor hardy beginner air purifying"
         >
           <img
             src="https://i.ibb.co/fG9zLsvz/2c1e0ed3f8518e9504fdc3942ffaf782.jpg"
-            alt="Snake Plant"
+            alt="Snake plant"
             class="plant-image"
           />
           <div class="plant-body">
             <h3>Snake Plant</h3>
-            <p class="plant-tags">Indoor • Low maintenance</p>
+            <div class="plant-tags">Low light · Super hardy</div>
             <p class="plant-info">
-              Thrives on neglect, handles low light, and gently purifies indoor
-              air — a classic for bedrooms and study spaces.
+              Almost unkillable. Survives low light, irregular watering, and hostel life.
             </p>
             <div class="plant-actions">
-              <a href="snake-plant.html" class="btn btn-small btn-secondary">
-                More details
-              </a>
+              <a href="snake-plant.html" class="btn btn-small">More details</a>
             </div>
           </div>
         </article>
 
-        <!-- ARECA PALM (no page yet) -->
-        <article
-          class="plant-card"
-          data-name="Areca Palm"
-          data-tags="indoor bright light tropical"
-        >
-          <img
-            src="https://via.placeholder.com/600x400?text=Areca+Palm"
-            alt="Areca Palm"
-            class="plant-image"
-          />
-          <div class="plant-body">
-            <h3>Areca Palm</h3>
-            <p class="plant-tags">Indoor • Bright light</p>
-            <p class="plant-info">
-              Creates a soft, tropical look in bright rooms with evenly moist
-              soil and good drainage.
-            </p>
-            <div class="plant-actions">
-              <button class="btn btn-small btn-disabled" type="button" disabled>
-                Full guide coming soon
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- ALOE VERA -->
+        <!-- Aloe Vera card -->
         <article
           class="plant-card"
           data-name="Aloe Vera"
-          data-tags="succulent sunny low water"
+          data-tags="succulent balcony sunny healing gel"
         >
           <img
             src="https://i.ibb.co/Gvh7d4L4/a2b1441cfb08466332842567ebfe3fb7.jpg"
-            alt="Aloe Vera"
+            alt="Aloe Vera plant"
             class="plant-image"
           />
           <div class="plant-body">
             <h3>Aloe Vera</h3>
-            <p class="plant-tags">Succulent • Sunny windowsill</p>
+            <div class="plant-tags">Succulent · Sunny window</div>
             <p class="plant-info">
-              A sun-loving succulent with soothing gel; let the soil dry out fully
-              between waterings for happy roots.
+              Loves sun, hates overwatering. A classic healing plant with gel-filled leaves.
             </p>
             <div class="plant-actions">
-              <a href="aloe-vera.html" class="btn btn-small btn-secondary">
-                More details
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PEACE LILY (no page yet) -->
-        <article
-          class="plant-card"
-          data-name="Peace Lily"
-          data-tags="indoor flowering low light"
-        >
-          <img
-            src="https://via.placeholder.com/600x400?text=Peace+Lily"
-            alt="Peace Lily"
-            class="plant-image"
-          />
-          <div class="plant-body">
-            <h3>Peace Lily</h3>
-            <p class="plant-tags">Indoor • Low light • Flowering</p>
-            <p class="plant-info">
-              Produces elegant white blooms in low to medium light when soil is
-              kept softly moist.
-            </p>
-            <div class="plant-actions">
-              <button class="btn btn-small btn-disabled" type="button" disabled>
-                Full guide coming soon
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- SPIDER PLANT (no page yet) -->
-        <article
-          class="plant-card"
-          data-name="Spider Plant"
-          data-tags="indoor hanging easy"
-        >
-          <img
-            src="https://via.placeholder.com/600x400?text=Spider+Plant"
-            alt="Spider Plant"
-            class="plant-image"
-          />
-          <div class="plant-body">
-            <h3>Spider Plant</h3>
-            <p class="plant-tags">Indoor • Hanging • Easy</p>
-            <p class="plant-info">
-              Great for hanging baskets; produces baby plantlets and tolerates a
-              variety of light levels.
-            </p>
-            <div class="plant-actions">
-              <button class="btn btn-small btn-disabled" type="button" disabled>
-                Full guide coming soon
-              </button>
+              <a href="aloe-vera.html" class="btn btn-small">More details</a>
             </div>
           </div>
         </article>
       </div>
-
-      <p class="search-note" id="search-note" hidden>
-        No plants matched your search. Try a different name or category.
-      </p>
     </div>
   </section>
 
-  <!-- ================= SEASONAL PLANTS ================= -->
-  <section class="seasonal reveal" id="seasonal">
+  <!-- SEASONAL SECTION -->
+  <section class="reveal" id="seasonal">
     <div class="container">
       <div class="section-heading">
-        <h2>Seasonal plant highlights</h2>
-        <p>
-          Choose plants that love each season, so your home stays green in
-          summer, monsoon, and winter.
-        </p>
+        <h2>Seasonal care at a glance</h2>
+        <p>How your plants behave through Indian summer, monsoon, and winter.</p>
       </div>
 
       <div class="season-grid">
-        <article class="season-card">
-          <p class="season-label">Summer</p>
-          <h3>Heat-loving greens</h3>
+        <div class="season-card">
+          <div class="season-label">Summer</div>
+          <h3>Heat & strong light</h3>
           <ul>
-            <li>Areca Palm – loves bright light and warm rooms.</li>
-            <li>Jade Plant – a sunny succulent that stores water.</li>
-            <li>Hibiscus – rewards you with vibrant blooms.</li>
+            <li>Shift delicate plants away from harsh afternoon sun.</li>
+            <li>Water in the early morning or evening, not mid-day.</li>
+            <li>Monsteras grow fast; check for new leaves often.</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="season-card">
-          <p class="season-label">Monsoon</p>
-          <h3>Humidity happy</h3>
+        <div class="season-card">
+          <div class="season-label">Monsoon</div>
+          <h3>Moist air & wet soil</h3>
           <ul>
-            <li>Boston Fern – thrives in moist, shady corners.</li>
-            <li>Peace Lily – enjoys consistent moisture and soft light.</li>
-            <li>Calathea – loves humid bathrooms and kitchens.</li>
+            <li>Cut back watering—soil stays wet longer.</li>
+            <li>Watch for fungus in pots with poor drainage.</li>
+            <li>Snake plants especially hate sitting in water.</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="season-card">
-          <p class="season-label">Winter</p>
-          <h3>Cozy corner plants</h3>
+        <div class="season-card">
+          <div class="season-label">Winter</div>
+          <h3>Slow growth & rest</h3>
           <ul>
-            <li>Snake Plant – unfazed by cool, low-light spaces.</li>
-            <li>ZZ Plant – handles irregular watering and dim rooms.</li>
-            <li>Rubber Plant – prefers bright windows but tolerates mild cold.</li>
+            <li>Most houseplants pause growth; don’t force fertilizer.</li>
+            <li>Let soil dry more between waterings.</li>
+            <li>Move tropical plants away from cold windows at night.</li>
           </ul>
-        </article>
-
-        <article class="season-card">
-          <p class="season-label">All-season</p>
-          <h3>Steady performers</h3>
-          <ul>
-            <li>Spider Plant – adapts to changing light conditions.</li>
-            <li>Pothos – grows well in most indoor environments.</li>
-            <li>Philodendron – forgiving and fast-growing.</li>
-          </ul>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= CARE GUIDES ================= -->
-  <section class="care reveal" id="care">
+  <!-- CARE BASICS -->
+  <section class="reveal" id="care">
     <div class="container">
       <div class="section-heading">
-        <h2>Care essentials at a glance</h2>
-        <p>
-          Every Bambotical plant page uses these icons so you can quickly see what
-          your plant needs.
-        </p>
+        <h2>Care basics for almost every plant</h2>
+        <p>Four pillars that keep 90% of common indoor plants happy.</p>
       </div>
 
       <div class="care-grid">
-        <article class="care-card">
-          <i class="fa-solid fa-sun care-icon"></i>
+        <div class="care-card">
+          <div class="care-icon"><i class="fa-solid fa-sun"></i></div>
           <h3>Light</h3>
           <p>
-            Understand if your plant prefers bright sunlight, soft indirect light,
-            or cozy low-light corners.
+            Most indoor plants prefer bright, indirect light — near a window but not in harsh,
+            direct sun. Low-light plants will still appreciate some brightness.
           </p>
-        </article>
+        </div>
 
-        <article class="care-card">
-          <i class="fa-solid fa-droplet care-icon"></i>
+        <div class="care-card">
+          <div class="care-icon"><i class="fa-solid fa-droplet"></i></div>
           <h3>Water</h3>
           <p>
-            Learn how often to water and how to avoid overwatering or underwatering
-            stress.
+            When in doubt, underwater slightly instead of overwatering. Always
+            check the top soil with your finger before watering again.
           </p>
-        </article>
+        </div>
 
-        <article class="care-card">
-          <i class="fa-solid fa-mountain-sun care-icon"></i>
-          <h3>Soil & Pot</h3>
+        <div class="care-card">
+          <div class="care-icon"><i class="fa-solid fa-mountain-sun"></i></div>
+          <h3>Soil & pot</h3>
           <p>
-            Pick the right potting mix and drainage so roots stay healthy and
-            oxygenated.
+            Use a well-draining mix and a pot with a drainage hole. Standing
+            water at the bottom of the pot is the fastest way to root rot.
           </p>
-        </article>
+        </div>
 
-        <article class="care-card">
-          <i class="fa-solid fa-paw care-icon"></i>
-          <h3>Pet safety</h3>
+        <div class="care-card">
+          <div class="care-icon"><i class="fa-solid fa-wind"></i></div>
+          <h3>Air & humidity</h3>
           <p>
-            Quickly check if a plant is considered pet-safe or if extra caution is
-            needed around cats and dogs.
+            Monsteras and other tropical plants like some humidity. Bathrooms or
+            near a bowl of water can help if the air is very dry.
           </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FEATURED & LOW-MAINTENANCE ================= -->
-  <section class="featured reveal">
-    <div class="container featured-grid">
-      <div class="featured-main">
-        <p class="eyebrow">Plant of the week</p>
-        <h2>ZZ Plant – the unbothered survivor</h2>
-        <p>
-          Shiny leaves, sculptural stems, and impressive patience. The ZZ Plant
-          handles skipped waterings and low light better than most houseplants,
-          making it perfect for busy plant parents.
-        </p>
-        <ul class="featured-list">
-          <li><i class="fa-solid fa-circle-check"></i> Low water needs</li>
-          <li><i class="fa-solid fa-circle-check"></i> Handles low to medium light</li>
-          <li><i class="fa-solid fa-circle-check"></i> Great for desks and shelves</li>
-        </ul>
-        <a href="#wiki" class="btn btn-small">View care details</a>
-      </div>
-
-      <div class="featured-side">
-        <h3>Low-maintenance picks</h3>
-        <p>Start here if you’re new to plants.</p>
-        <div class="mini-plant-list">
-          <div class="mini-plant">
-            <div class="mini-plant-info">
-              <h4>Snake Plant</h4>
-              <span>Water every 2–3 weeks</span>
-            </div>
-          </div>
-          <div class="mini-plant">
-            <div class="mini-plant-info">
-              <h4>ZZ Plant</h4>
-              <span>Tolerates low light</span>
-            </div>
-          </div>
-          <div class="mini-plant">
-            <div class="mini-plant-info">
-              <h4>Pothos</h4>
-              <span>Fast-growing vine</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= TESTIMONIALS ================= -->
-  <section class="testimonials reveal" id="community">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Plant lovers using Bambotical</h2>
-        <p>
-          A peek at how the wiki is helping people keep their plants alive and
-          happy.
-        </p>
-      </div>
-
-      <div class="testimonial-grid">
-        <article class="testimonial-card">
-          <div class="testimonial-profile">
-            <div class="avatar">S</div>
-            <div>
-              <h3>Sana</h3>
-              <p class="testimonial-role">New plant parent</p>
-            </div>
-          </div>
-          <p class="testimonial-text">
-            “The seasonal suggestions make it super easy to pick plants that won’t
-            die on me the moment the weather changes.”
-          </p>
-          <div class="testimonial-rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <div class="testimonial-profile">
-            <div class="avatar">R</div>
-            <div>
-              <h3>Rohan</h3>
-              <p class="testimonial-role">Balcony gardener</p>
-            </div>
-          </div>
-          <p class="testimonial-text">
-            “I love how each plant page breaks down light and water needs in a
-            simple way. No more random guessing.”
-          </p>
-          <div class="testimonial-rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= NEWSLETTER ================= -->
-  <section class="newsletter reveal" id="newsletter">
-    <div class="container newsletter-inner">
-      <div class="newsletter-text">
-        <h2>Get green tips in your inbox</h2>
-        <p>
-          A short weekly email with seasonal reminders, care checklists, and new
-          plant profiles from Bambotical.
-        </p>
-      </div>
-      <form class="newsletter-form">
-        <label for="newsletter-email" class="sr-only">Email address</label>
-        <input
-          type="email"
-          id="newsletter-email"
-          placeholder="Enter your email"
-          required
-        />
-        <button type="submit" class="btn btn-small">Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ================= BLOG ================= -->
-  <section class="blog reveal" id="blog">
-    <div class="container">
-      <div class="section-heading">
-        <h2>From the Bambotical blog</h2>
-        <p>
-          Simple guides and stories to help you understand your plants a little
-          better.
-        </p>
-      </div>
-
-      <div class="blog-grid">
-        <article class="blog-card">
-          <img
-            src="https://via.placeholder.com/800x500?text=Sunny+Window+Plants"
-            alt="Sunny windowsill plants"
-          />
-          <div class="blog-body">
-            <p class="blog-category">Light Guide</p>
-            <h3>How to read your window for plant light</h3>
-            <p>
-              North, south, east, west — what those directions actually mean for
-              your plants.
-            </p>
-            <a href="#" class="blog-link">Read more</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img
-            src="https://via.placeholder.com/800x500?text=Watering+Plants"
-            alt="Watering a houseplant"
-          />
-          <div class="blog-body">
-            <p class="blog-category">Watering</p>
-            <h3>Signs you might be overwatering</h3>
-            <p>
-              Soft stems, yellow leaves, and damp soil: learn the early warning
-              signs.
-            </p>
-            <a href="#" class="blog-link">Read more</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <img
-            src="https://via.placeholder.com/800x500?text=Cozy+Indoor+Jungle"
-            alt="Cozy indoor jungle"
-          />
-          <div class="blog-body">
-            <p class="blog-category">Beginner</p>
-            <h3>5 plants that forgive your mistakes</h3>
-            <p>
-              A list of easy-going plants that stay cheerful even if you forget a
-              watering or two.
-            </p>
-            <a href="#" class="blog-link">Read more</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FAQ ================= -->
-  <section class="faq reveal" id="faq">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Frequently asked questions</h2>
-        <p>
-          A few quick answers about how Bambotical works as a plants wiki.
-        </p>
-      </div>
-
-      <div class="faq-grid">
-        <details class="faq-item">
-          <summary>Is Bambotical free to use?</summary>
-          <p>
-            Yes. You can read all plant profiles, seasonal guides, and blog posts
-            for free.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do you sell plants?</summary>
-          <p>
-            Not right now. Bambotical is focused on information only — we help you
-            decide what to buy from your favorite local nurseries or online
-            stores.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How accurate are the care guides?</summary>
-          <p>
-            We combine general horticulture advice with community feedback, but
-            always adapt tips to your local climate and home conditions.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can I suggest a plant to add?</summary>
-          <p>
-            Absolutely. Use the contact form below to suggest new plants or report
-            errors on existing pages.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section class="contact reveal" id="contact">
-    <div class="container contact-grid">
-      <div>
-        <h2>Contact Bambotical</h2>
-        <p>
-          Have a plant question or a suggestion for the wiki? Drop a message and
-          we’ll get back to you.
-        </p>
-        <ul class="contact-list">
-          <li>
-            <i class="fa-solid fa-envelope"></i>
-            <span>bambotical.support@example.com</span>
-          </li>
-          <li>
-            <i class="fa-brands fa-instagram"></i>
-            <span>@bambotical</span>
-          </li>
-        </ul>
-      </div>
-
-      <form class="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Your email" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            rows="4"
-            placeholder="Ask anything about plants or the wiki..."
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-small">Send message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
+  <!-- FOOTER -->
+  <footer class="site-footer reveal" id="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="brand-name">Bambotical</span>
-        <p>Plant knowledge for every corner of your home.</p>
       </div>
       <div class="footer-links">
-        <a href="#wiki">Plant Wiki</a>
-        <a href="#seasonal">Seasonal</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
+        <a href="#hero">Home</a>
+        <a href="#wiki">Plant wiki</a>
+        <a href="#care">Care basics</a>
+        <a href="#seasonal">Season guide</a>
       </div>
-      <p class="footer-copy">
-        © <span id="year"></span> Bambotical. All rights reserved.
-      </p>
+      <div class="footer-copy">
+        © <span id="year"></span> Bambotical · Built for a college project with lots of plants 🌿
+      </div>
     </div>
   </footer>
 
-  <!-- Your JS file -->
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
