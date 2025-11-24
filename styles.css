@@ -803,3 +803,7 @@ img {
     align-items: flex-start;
   }
 }
+/* Hidden plant cards – invisible but searchable */
+.hidden-plant {
+  display: none !important;
+}
