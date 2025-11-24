@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Money Plant (Pothos) – Bambotical</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="plant-page">
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-wrapper">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Bambotical</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">B</div>
+        <div>
+          <div class="brand-name">Bambotical</div>
+          <div class="brand-tagline">Your friendly plant wiki</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#wiki">Plants</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link-btn">
+              Plant Pages <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="nav-dropdown">
+              <li><a href="monstera.html">Monstera</a></li>
+              <li><a href="snake-plant.html">Snake Plant</a></li>
+              <li><a href="aloe-vera.html">Aloe Vera</a></li>
+              <li><a href="tulsi.html">Tulsi</a></li>
+              <li><a href="rosemary.html">Rosemary</a></li>
+              <li><a href="lavender.html">Lavender</a></li>
+              <li><a href="adenium.html">Adenium</a></li>
+              <li><a href="money-plant.html">Money Plant</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="plant-hero reveal"
+    style="background-image: url('images/money-plant.jpg');">
+    <div class="plant-hero-overlay"></div>
+    <div class="container plant-hero-content">
+      <p class="eyebrow">Plant Profile</p>
+      <h1>Money Plant (Pothos)</h1>
+      <p class="hero-subtitle">
+        A classic trailing vine that survives low light, missed waterings and busy student life — perfect for shelves, windows and hanging pots.
+      </p>
+    </div>
+  </section>
+
+  <!-- Details -->
+  <section class="plant-details reveal">
+    <div class="container plant-details-inner">
+
+      <!-- Main content -->
+      <div class="plant-info-section">
+        <h2>About this plant</h2>
+        <p>
+          Money Plant (often called Pothos) is one of the easiest indoor plants to grow.
+          It has heart-shaped leaves that can be plain green, neon or variegated, and
+          it happily trails from shelves, windows or hanging baskets.
+        </p>
+        <p>
+          It tolerates low light, dry air and occasional neglect, which makes it a favourite
+          for hostels, study rooms and offices. With better light and regular care, it grows
+          quickly and can be propagated easily in water or soil.
+        </p>
+
+        <h2>Care requirements</h2>
+        <div class="care-icons-row">
+
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-sun"></i> Light</h4>
+            <p>
+              Low to bright, indirect light. Grows faster and bushier in brighter spots, but can survive in low light.
+            </p>
+          </div>
+
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-droplet"></i> Water</h4>
+            <p>
+              Water when the top 2–3 cm of soil feels dry. Slight underwatering is safer than overwatering.
+            </p>
+          </div>
+
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-mountain-sun"></i> Soil</h4>
+            <p>
+              Normal potting mix with good drainage works well. Add a bit of perlite or sand if soil holds too much water.
+            </p>
+          </div>
+
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-seedling"></i> Propagation</h4>
+            <p>
+              Very easy to propagate from stem cuttings in water or directly in soil.
+            </p>
+          </div>
+        </div>
+
+        <h2>Seasonal behavior</h2>
+        <ul class="season-list">
+          <li><strong>Summer:</strong> Active growth; may need more frequent watering in very hot rooms.</li>
+          <li><strong>Monsoon:</strong> Soil stays wet longer; check soil before watering to avoid sogginess.</li>
+          <li><strong>Winter:</strong> Growth slows; water less often and keep away from very cold windows.</li>
+        </ul>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="plant-sidebar">
+        <h3>Quick info</h3>
+        <ul class="quick-info-list">
+          <li><strong>Scientific name:</strong> Epipremnum aureum</li>
+          <li><strong>Type:</strong> Trailing indoor vine</li>
+          <li><strong>Care level:</strong> Very easy</li>
+          <li><strong>Ideal spot:</strong> Shelf, window, hanging pot</li>
+          <li><strong>Extras:</strong> Easy propagation, great for beginners</li>
+        </ul>
+
+        <a href="index.html#wiki" class="btn btn-small back-btn">
+          ← Back to plant wiki
+        </a>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
