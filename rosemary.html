@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosemary – Bambotical</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="plant-page">
+
+  <div id="loading-screen">
+    <div class="loader-wrapper">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Bambotical</div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">B</div>
+        <div>
+          <div class="brand-name">Bambotical</div>
+          <div class="brand-tagline">Your friendly plant wiki</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#wiki">Plants</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link-btn">
+              Plant Pages <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="nav-dropdown">
+              <li><a href="monstera.html">Monstera</a></li>
+              <li><a href="snake-plant.html">Snake Plant</a></li>
+              <li><a href="aloe-vera.html">Aloe Vera</a></li>
+              <li><a href="tulsi.html">Tulsi</a></li>
+              <li><a href="rosemary.html">Rosemary</a></li>
+              <li><a href="lavender.html">Lavender</a></li>
+              <li><a href="adenium.html">Adenium</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="plant-hero reveal"
+    style="background-image: url('images/rosemary.jpg');">
+    <div class="plant-hero-overlay"></div>
+    <div class="container plant-hero-content">
+      <p class="eyebrow">Plant Profile</p>
+      <h1>Rosemary</h1>
+      <p class="hero-subtitle">
+        A woody Mediterranean herb that brings flavour and fragrance to both your balcony and your kitchen.
+      </p>
+    </div>
+  </section>
+
+  <section class="plant-details reveal">
+    <div class="container plant-details-inner">
+      <div class="plant-info-section">
+        <h2>About this plant</h2>
+        <p>
+          Rosemary is an evergreen herb with needle-like leaves and a strong aroma. It’s often used in cooking for
+          potatoes, breads, pasta, and roasted veggies.
+        </p>
+        <p>
+          It prefers full sun and well-draining soil. In pots, it does best when you avoid overwatering and give it
+          plenty of airflow around the foliage.
+        </p>
+
+        <h2>Care requirements</h2>
+        <div class="care-icons-row">
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-sun"></i> Light</h4>
+            <p>Needs bright light, ideally 4–6 hours of direct sun each day.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-droplet"></i> Water</h4>
+            <p>Water when the top 3–4 cm of soil is dry; dislikes constantly wet soil.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-mountain-sun"></i> Soil</h4>
+            <p>Use a gritty, well-draining mix (add sand or perlite).</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-utensils"></i> Harvest</h4>
+            <p>Snip the soft tips for cooking; avoid removing too much at once.</p>
+          </div>
+        </div>
+
+        <h2>Seasonal behavior</h2>
+        <ul class="season-list">
+          <li><strong>Summer:</strong> Enjoys the sun; water slightly more if windy and hot.</li>
+          <li><strong>Monsoon:</strong> Make sure the pot drains well; too much rain can cause root rot.</li>
+          <li><strong>Winter:</strong> Growth slows; keep in a bright spot and water less often.</li>
+        </ul>
+      </div>
+
+      <aside class="plant-sidebar">
+        <h3>Quick info</h3>
+        <ul class="quick-info-list">
+          <li><strong>Scientific name:</strong> Salvia rosmarinus</li>
+          <li><strong>Type:</strong> Woody herb</li>
+          <li><strong>Care level:</strong> Medium</li>
+          <li><strong>Ideal spot:</strong> Sunny balcony or terrace</li>
+          <li><strong>Uses:</strong> Cooking, aroma, herbal infusions</li>
+        </ul>
+        <a href="index.html#wiki" class="btn btn-small back-btn">← Back to plant wiki</a>
+      </aside>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
