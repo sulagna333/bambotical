@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lavender – Bambotical</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="plant-page">
+
+  <div id="loading-screen">
+    <div class="loader-wrapper">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Bambotical</div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">B</div>
+        <div>
+          <div class="brand-name">Bambotical</div>
+          <div class="brand-tagline">Your friendly plant wiki</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#wiki">Plants</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link-btn">
+              Plant Pages <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="nav-dropdown">
+              <li><a href="monstera.html">Monstera</a></li>
+              <li><a href="snake-plant.html">Snake Plant</a></li>
+              <li><a href="aloe-vera.html">Aloe Vera</a></li>
+              <li><a href="tulsi.html">Tulsi</a></li>
+              <li><a href="rosemary.html">Rosemary</a></li>
+              <li><a href="lavender.html">Lavender</a></li>
+              <li><a href="adenium.html">Adenium</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="plant-hero reveal"
+    style="background-image: url('images/lavender.jpg');">
+    <div class="plant-hero-overlay"></div>
+    <div class="container plant-hero-content">
+      <p class="eyebrow">Plant Profile</p>
+      <h1>Lavender</h1>
+      <p class="hero-subtitle">
+        Soft purple flowers with a relaxing scent — a balcony plant that attracts bees and looks like a mini field.
+      </p>
+    </div>
+  </section>
+
+  <section class="plant-details reveal">
+    <div class="container plant-details-inner">
+      <div class="plant-info-section">
+        <h2>About this plant</h2>
+        <p>
+          Lavender is a classic herb grown for its fragrance and soft purple blooms. It prefers cool roots, lots of light,
+          and soil that never stays soggy.
+        </p>
+        <p>
+          It can be a little fussy in very humid climates, but with the right potting mix and enough sun,
+          it becomes a beautiful feature plant on balconies and terraces.
+        </p>
+
+        <h2>Care requirements</h2>
+        <div class="care-icons-row">
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-sun"></i> Light</h4>
+            <p>Needs strong light; aim for 5–6 hours of sun each day.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-droplet"></i> Water</h4>
+            <p>Water deeply but rarely; let soil dry well between watering.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-mountain-sun"></i> Soil</h4>
+            <p>Use a very well-draining mix with sand or gravel.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-wind"></i> Airflow</h4>
+            <p>Good airflow helps prevent fungus in humid climates.</p>
+          </div>
+        </div>
+
+        <h2>Seasonal behavior</h2>
+        <ul class="season-list">
+          <li><strong>Summer:</strong> Peak blooming season; keep watered but never soggy.</li>
+          <li><strong>Monsoon:</strong> Protect from constant rain; move under a roof if needed.</li>
+          <li><strong>Winter:</strong> Growth slows; give as much sunlight as possible.</li>
+        </ul>
+      </div>
+
+      <aside class="plant-sidebar">
+        <h3>Quick info</h3>
+        <ul class="quick-info-list">
+          <li><strong>Scientific name:</strong> Lavandula (various species)</li>
+          <li><strong>Type:</strong> Flowering herb</li>
+          <li><strong>Care level:</strong> Medium</li>
+          <li><strong>Ideal spot:</strong> Sunny balcony or terrace edge</li>
+          <li><strong>Uses:</strong> Fragrance, sachets, simple decor</li>
+        </ul>
+        <a href="index.html#wiki" class="btn btn-small back-btn">← Back to plant wiki</a>
+      </aside>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
