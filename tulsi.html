@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tulsi (Holy Basil) – Bambotical</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="plant-page">
+
+  <!-- Loader -->
+  <div id="loading-screen">
+    <div class="loader-wrapper">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Bambotical</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">B</div>
+        <div>
+          <div class="brand-name">Bambotical</div>
+          <div class="brand-tagline">Your friendly plant wiki</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#wiki">Plants</a></li>
+          <li class="has-dropdown">
+            <button class="nav-link-btn">
+              Plant Pages <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="nav-dropdown">
+              <li><a href="monstera.html">Monstera</a></li>
+              <li><a href="snake-plant.html">Snake Plant</a></li>
+              <li><a href="aloe-vera.html">Aloe Vera</a></li>
+              <li><a href="tulsi.html">Tulsi</a></li>
+              <li><a href="rosemary.html">Rosemary</a></li>
+              <li><a href="lavender.html">Lavender</a></li>
+              <li><a href="adenium.html">Adenium</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="plant-hero reveal"
+    style="background-image: url('images/tulsi.jpg');">
+    <div class="plant-hero-overlay"></div>
+    <div class="container plant-hero-content">
+      <p class="eyebrow">Plant Profile</p>
+      <h1>Tulsi (Holy Basil)</h1>
+      <p class="hero-subtitle">
+        A sacred, medicinal herb found in many Indian homes — loved for its fragrance, flavour, and healing properties.
+      </p>
+    </div>
+  </section>
+
+  <!-- Details -->
+  <section class="plant-details reveal">
+    <div class="container plant-details-inner">
+      <div class="plant-info-section">
+        <h2>About this plant</h2>
+        <p>
+          Tulsi, or Holy Basil, is a highly valued herb in Indian culture. It is used in herbal teas, home remedies,
+          and daily rituals. It grows best in a warm balcony or sunny window with regular care.
+        </p>
+        <p>
+          The plant prefers consistent moisture but does not like to stay in soggy soil. With enough sun and pruning,
+          Tulsi bushes out nicely and stays productive for a long time.
+        </p>
+
+        <h2>Care requirements</h2>
+        <div class="care-icons-row">
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-sun"></i> Light</h4>
+            <p>Needs at least 4–5 hours of direct or very bright light daily.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-droplet"></i> Water</h4>
+            <p>Keep soil lightly moist; water when the top layer feels dry.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-mountain-sun"></i> Soil</h4>
+            <p>Use a loose, well-draining potting mix with compost.</p>
+          </div>
+          <div class="care-icon-card">
+            <h4><i class="fa-solid fa-seedling"></i> Harvest</h4>
+            <p>Pinch leaves regularly from the top to encourage branching.</p>
+          </div>
+        </div>
+
+        <h2>Seasonal behavior</h2>
+        <ul class="season-list">
+          <li><strong>Summer:</strong> Thrives with sun and regular watering; may need more frequent watering in heat.</li>
+          <li><strong>Monsoon:</strong> Reduce watering slightly; watch for fungus and pests on wet leaves.</li>
+          <li><strong>Winter:</strong> Growth slows; protect from cold winds and water less often.</li>
+        </ul>
+      </div>
+
+      <aside class="plant-sidebar">
+        <h3>Quick info</h3>
+        <ul class="quick-info-list">
+          <li><strong>Scientific name:</strong> Ocimum tenuiflorum</li>
+          <li><strong>Type:</strong> Medicinal herb</li>
+          <li><strong>Care level:</strong> Easy–Medium</li>
+          <li><strong>Ideal spot:</strong> Sunny balcony or window</li>
+          <li><strong>Uses:</strong> Herbal tea, home remedies, puja</li>
+        </ul>
+        <a href="index.html#wiki" class="btn btn-small back-btn">← Back to plant wiki</a>
+      </aside>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
