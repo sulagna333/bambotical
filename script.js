@@ -15,40 +15,44 @@ if (navToggle && navLinks) {
     }
   });
 }
-
-/* =====================
-   PLANT SEARCH ENGINE
-===================== */
+// SEARCH SYSTEM — SHOW HIDDEN PLANTS IF THEY MATCH
 const searchInput = document.getElementById("plant-search");
 const plantCards = document.querySelectorAll(".plant-card");
 const searchNote = document.getElementById("search-note");
 
-function filterPlants() {
-  if (!searchInput) return; // not on this page
-  const query = searchInput.value.trim().toLowerCase();
-  let visibleCount = 0;
+searchInput.addEventListener("input", function () {
+  const query = this.value.toLowerCase().trim();
+  let results = 0;
 
-  plantCards.forEach((card) => {
-    const name = (card.dataset.name || "").toLowerCase();
-    const tags = (card.dataset.tags || "").toLowerCase();
+  plantCards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const tags = card.dataset.tags.toLowerCase();
 
-    const matches =
-      query.length === 0 ||
-      name.includes(query) ||
-      tags.includes(query);
+    // match by name OR tags
+    const matches = name.includes(query) || tags.includes(query);
 
-    card.style.display = matches ? "flex" : "none";
-    if (matches) visibleCount++;
+    if (query === "") {
+      // Show only normal plants, NOT hidden plants
+      if (card.classList.contains("hidden-plant")) {
+        card.style.display = "none";
+      } else {
+        card.style.display = "";
+      }
+    } else {
+      // When searching, show EVERYTHING that matches (including hidden)
+      if (matches) {
+        card.style.display = "block";
+        results++;
+      } else {
+        card.style.display = "none";
+      }
+    }
   });
 
-  if (searchNote) {
-    searchNote.hidden = visibleCount !== 0;
-  }
-}
+  // show note if nothing found
+  searchNote.hidden = results > 0;
+});
 
-if (searchInput) {
-  searchInput.addEventListener("input", filterPlants);
-}
 
 /* =====================
    FOOTER YEAR
