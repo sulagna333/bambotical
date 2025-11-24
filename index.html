@@ -49,6 +49,8 @@
           <li><a href="#wiki">Plants</a></li>
           <li><a href="#care">Care</a></li>
           <li><a href="#seasonal">Seasonal</a></li>
+
+          <!-- UPDATED DROPDOWN WITH ALL 7 PLANTS -->
           <li class="has-dropdown">
             <button class="nav-link-btn">
               Plant Pages <i class="fa-solid fa-chevron-down"></i>
@@ -57,6 +59,10 @@
               <li><a href="monstera.html">Monstera</a></li>
               <li><a href="snake-plant.html">Snake Plant</a></li>
               <li><a href="aloe-vera.html">Aloe Vera</a></li>
+              <li><a href="tulsi.html">Tulsi</a></li>
+              <li><a href="rosemary.html">Rosemary</a></li>
+              <li><a href="lavender.html">Lavender</a></li>
+              <li><a href="adenium.html">Adenium</a></li>
             </ul>
           </li>
         </ul>
@@ -77,10 +83,11 @@
     <div class="hero-overlay"></div>
     <div class="container hero-inner">
       <p class="eyebrow">Plant Wiki · Indoor & Balcony</p>
-      <h1>Grow a tiny jungle with Bambotical.</h1>
+      <h1>Discover plants that thrive in your space, all year round.</h1>
       <p class="hero-subtitle">
-        Explore easy-care plants, seasonal tips, and simple guides created for
-        students, beginners, and plant lovers who just want green without chaos.
+        Bambotical is a simple plants wiki where you can explore care
+        guides, seasonal recommendations, and plant facts — all in one
+        green corner of the web.
       </p>
 
       <div class="hero-actions">
@@ -90,12 +97,12 @@
 
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-number">3+</div>
-          <div class="stat-label">Starter plants</div>
+          <div class="stat-number">7</div>
+          <div class="stat-label">Beginner-friendly plants</div>
         </div>
         <div class="stat">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Seasonal tips</div>
+          <div class="stat-number">3</div>
+          <div class="stat-label">Light levels covered</div>
         </div>
       </div>
     </div>
@@ -105,27 +112,25 @@
   <section class="reveal" id="about">
     <div class="container">
       <div class="section-heading">
-        <h2>Why Bambotical?</h2>
-        <p>Because plant care shouldn’t feel like an exam — it should feel like a calm hobby.</p>
+        <h2>Why learn with Bambotical?</h2>
+        <p>Forget confusing plant jargon. Bambotical keeps things simple, visual, and practical so you always know what your plants really need.</p>
       </div>
 
       <div class="why-grid">
         <div class="why-card">
           <div class="why-icon"><i class="fa-solid fa-leaf"></i></div>
           <h3>Student-friendly</h3>
-          <p>Simple, quick notes written so you can revise care tips like a cheat sheet.</p>
+          <p>Notes written like a quick revision sheet so you can check care instructions in under a minute.</p>
         </div>
-
         <div class="why-card">
           <div class="why-icon"><i class="fa-solid fa-droplet"></i></div>
           <h3>Low-maintenance picks</h3>
-          <p>Only plants that survive busy schedules, late nights, and forgotten watering days.</p>
+          <p>Only plants that can survive busy schedules, late-night assignments, and forgotten watering days.</p>
         </div>
-
         <div class="why-card">
           <div class="why-icon"><i class="fa-solid fa-sun"></i></div>
-          <h3>Season-wise care</h3>
-          <p>Quick guides for summer, monsoon, and winter so your plants don’t panic when the weather changes.</p>
+          <h3>Season-wise tips</h3>
+          <p>Short guides for summer, monsoon, and winter so your plants don’t panic when the weather does.</p>
         </div>
       </div>
     </div>
@@ -146,7 +151,7 @@
             <input
               type="text"
               id="plant-search"
-              placeholder="Search by plant name, type or tags (e.g. low light, pet safe)..."
+              placeholder="Search by plant name, type or tags (e.g. low light, balcony, medicinal)..."
             />
           </div>
           <p id="search-note" class="search-note" hidden>
@@ -155,8 +160,9 @@
         </div>
       </div>
 
+      <!-- UPDATED GRID WITH 7 PLANTS -->
       <div class="plant-grid">
-        <!-- Monstera card -->
+        <!-- Monstera -->
         <article
           class="plant-card"
           data-name="Monstera Deliciosa"
@@ -179,7 +185,7 @@
           </div>
         </article>
 
-        <!-- Snake Plant card -->
+        <!-- Snake Plant -->
         <article
           class="plant-card"
           data-name="Snake Plant"
@@ -202,7 +208,7 @@
           </div>
         </article>
 
-        <!-- Aloe Vera card -->
+        <!-- Aloe Vera -->
         <article
           class="plant-card"
           data-name="Aloe Vera"
@@ -224,11 +230,103 @@
             </div>
           </div>
         </article>
+
+        <!-- Tulsi -->
+        <article
+          class="plant-card"
+          data-name="Tulsi"
+          data-tags="balcony holy basil medicinal fragrant outdoor puja"
+        >
+          <img
+            src="images/tulsi.jpg"
+            alt="Tulsi plant"
+            class="plant-image"
+          />
+          <div class="plant-body">
+            <h3>Tulsi (Holy Basil)</h3>
+            <div class="plant-tags">Balcony · Medicinal · Sacred</div>
+            <p class="plant-info">
+              A much-loved medicinal herb in Indian homes. Happy in a sunny balcony with regular watering.
+            </p>
+            <div class="plant-actions">
+              <a href="tulsi.html" class="btn btn-small">More details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Rosemary -->
+        <article
+          class="plant-card"
+          data-name="Rosemary"
+          data-tags="herb balcony sun culinary fragrant mediterranean"
+        >
+          <img
+            src="images/rosemary.jpg"
+            alt="Rosemary plant"
+            class="plant-image"
+          />
+          <div class="plant-body">
+            <h3>Rosemary</h3>
+            <div class="plant-tags">Herb · Full sun · Balcony</div>
+            <p class="plant-info">
+              Woody, fragrant herb you can snip for pasta, potatoes, and roasted veggies straight from your pot.
+            </p>
+            <div class="plant-actions">
+              <a href="rosemary.html" class="btn btn-small">More details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lavender -->
+        <article
+          class="plant-card"
+          data-name="Lavender"
+          data-tags="herb fragrant pollinators balcony sunny calming"
+        >
+          <img
+            src="images/lavender.jpg"
+            alt="Lavender flowers"
+            class="plant-image"
+          />
+          <div class="plant-body">
+            <h3>Lavender</h3>
+            <div class="plant-tags">Fragrant · Sunny · Calming</div>
+            <p class="plant-info">
+              Soft purple spikes that love sun and airy soil. Great for balconies and bee-friendly corners.
+            </p>
+            <div class="plant-actions">
+              <a href="lavender.html" class="btn btn-small">More details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Adenium -->
+        <article
+          class="plant-card"
+          data-name="Adenium"
+          data-tags="desert rose succulent caudex balcony flowering sun"
+        >
+          <img
+            src="images/adenium.jpg"
+            alt="Adenium desert rose plant"
+            class="plant-image"
+          />
+          <div class="plant-body">
+            <h3>Adenium (Desert Rose)</h3>
+            <div class="plant-tags">Succulent · Balcony · Flowers</div>
+            <p class="plant-info">
+              A sculptural plant with a thick trunk and bright blooms. Loves lots of light and careful watering.
+            </p>
+            <div class="plant-actions">
+              <a href="adenium.html" class="btn btn-small">More details</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- SEASONAL SECTION -->
+  <!-- SEASONAL -->
   <section class="reveal" id="seasonal">
     <div class="container">
       <div class="section-heading">
@@ -243,7 +341,7 @@
           <ul>
             <li>Shift delicate plants away from harsh afternoon sun.</li>
             <li>Water in the early morning or evening, not mid-day.</li>
-            <li>Monsteras grow fast; check for new leaves often.</li>
+            <li>Check balcony plants like Tulsi and Adenium more often.</li>
           </ul>
         </div>
 
@@ -253,7 +351,7 @@
           <ul>
             <li>Cut back watering—soil stays wet longer.</li>
             <li>Watch for fungus in pots with poor drainage.</li>
-            <li>Snake plants especially hate sitting in water.</li>
+            <li>Succulents like Aloe and Adenium hate soggy roots.</li>
           </ul>
         </div>
 
@@ -261,7 +359,7 @@
           <div class="season-label">Winter</div>
           <h3>Slow growth & rest</h3>
           <ul>
-            <li>Most houseplants pause growth; don’t force fertilizer.</li>
+            <li>Most plants pause growth; don’t over-fertilize.</li>
             <li>Let soil dry more between waterings.</li>
             <li>Move tropical plants away from cold windows at night.</li>
           </ul>
@@ -275,7 +373,7 @@
     <div class="container">
       <div class="section-heading">
         <h2>Care basics for almost every plant</h2>
-        <p>Four pillars that keep 90% of common indoor plants happy.</p>
+        <p>Four pillars that keep 90% of common indoor and balcony plants happy.</p>
       </div>
 
       <div class="care-grid">
@@ -283,35 +381,28 @@
           <div class="care-icon"><i class="fa-solid fa-sun"></i></div>
           <h3>Light</h3>
           <p>
-            Most indoor plants prefer bright, indirect light — near a window but not in harsh,
-            direct sun. Low-light plants will still appreciate some brightness.
+            Most plants prefer bright, indirect light. Balcony herbs and Adenium enjoy more direct sun than indoor foliage.
           </p>
         </div>
-
         <div class="care-card">
           <div class="care-icon"><i class="fa-solid fa-droplet"></i></div>
           <h3>Water</h3>
           <p>
-            When in doubt, underwater slightly instead of overwatering. Always
-            check the top soil with your finger before watering again.
+            When in doubt, underwater a little instead of overwatering. Always check the top soil with your finger first.
           </p>
         </div>
-
         <div class="care-card">
           <div class="care-icon"><i class="fa-solid fa-mountain-sun"></i></div>
           <h3>Soil & pot</h3>
           <p>
-            Use a well-draining mix and a pot with a drainage hole. Standing
-            water at the bottom of the pot is the fastest way to root rot.
+            Use a well-draining mix and a pot with a drainage hole. Standing water at the bottom is the fastest way to root rot.
           </p>
         </div>
-
         <div class="care-card">
           <div class="care-icon"><i class="fa-solid fa-wind"></i></div>
           <h3>Air & humidity</h3>
           <p>
-            Monsteras and other tropical plants like some humidity. Bathrooms or
-            near a bowl of water can help if the air is very dry.
+            Good airflow prevents fungus and pests. Keep balcony plants slightly spaced out so leaves can fully dry.
           </p>
         </div>
       </div>
