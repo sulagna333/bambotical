@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Resources & Tips – Bambotical</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="resources-page">
+
+  <!-- Loader -->
+  <div id="loading-screen">
+    <div class="loader-wrapper">
+      <div class="loader-circle"></div>
+      <div class="loader-text">Bambotical</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">B</div>
+        <div>
+          <div class="brand-name">Bambotical</div>
+          <div class="brand-tagline">Your friendly plant wiki</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#wiki">Plants</a></li>
+          <li><a href="resources.html" class="active-link">Resources</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+
+        <button class="nav-toggle"><span></span><span></span><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="resources-hero">
+    <div class="container">
+      <h1>Plant Resources & Tips</h1>
+      <p class="hero-subtitle">
+        Simple guides for watering, soil, light levels, seasonal care, pests, and more.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tabs Section -->
+  <section class="resources-section container reveal">
+
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-tab="watering">
+        <i class="fa-solid fa-droplet"></i> Watering
+      </button>
+      <button class="tab-btn" data-tab="soil">
+        <i class="fa-solid fa-mountain-sun"></i> Soil Mixes
+      </button>
+      <button class="tab-btn" data-tab="light">
+        <i class="fa-solid fa-sun"></i> Light Levels
+      </button>
+      <button class="tab-btn" data-tab="pests">
+        <i class="fa-solid fa-bug"></i> Pests & Problems
+      </button>
+      <button class="tab-btn" data-tab="season">
+        <i class="fa-solid fa-cloud-sun"></i> Seasonal Care
+      </button>
+    </div>
+
+    <!-- Tab Content Wrapper -->
+    <div class="tab-content-wrapper">
+
+      <!-- WATERING -->
+      <div class="tab-content active" id="watering">
+        <h2><i class="fa-solid fa-droplet icon-spin icon-glow"></i> Watering Basics</h2>
+        <p>Most plant deaths come from <strong>overwatering</strong>. Follow these rules:</p>
+
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-hand-pointer icon-animate"></i> Check soil before watering.</li>
+          <li><i class="fa-solid fa-hourglass-half icon-bounce"></i> Let soil dry for succulents.</li>
+          <li><i class="fa-solid fa-pot-food icon-animate"></i> Bigger pots stay wet longer.</li>
+          <li><i class="fa-solid fa-arrow-down-long icon-glow"></i> Water until it drains out.</li>
+          <li><i class="fa-solid fa-temperature-half icon-animate"></i> Use room-temperature water.</li>
+        </ul>
+      </div>
+
+      <!-- SOIL -->
+      <div class="tab-content" id="soil">
+        <h2><i class="fa-solid fa-mountain-sun icon-glow"></i> Perfect Soil Mixes</h2>
+        <p>Different plants prefer different soils.</p>
+
+        <h3><i class="fa-solid fa-leaf icon-animate"></i> Indoor Foliage Plants</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-seedling icon-bounce"></i> 40% potting soil</li>
+          <li><i class="fa-solid fa-leaf icon-animate"></i> 30% cocopeat</li>
+          <li><i class="fa-solid fa-recycle icon-spin"></i> 20% compost</li>
+          <li><i class="fa-solid fa-wind icon-animate"></i> 10% perlite</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-cactus icon-bounce"></i> Succulents & Cactus</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-mound icon-animate"></i> 50% coarse sand</li>
+          <li><i class="fa-solid fa-mound icon-animate"></i> 30% cocopeat</li>
+          <li><i class="fa-solid fa-box-open icon-glow"></i> 20% perlite</li>
+        </ul>
+      </div>
+
+      <!-- LIGHT -->
+      <div class="tab-content" id="light">
+        <h2><i class="fa-solid fa-sun icon-spin"></i> Understanding Light Levels</h2>
+        <p>Each plant has different light needs:</p>
+
+        <h3><i class="fa-solid fa-sun-plant-wilt icon-animate"></i> Bright Indirect Light</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-leaf icon-glow"></i> Monstera</li>
+          <li><i class="fa-solid fa-leaf icon-glow"></i> Money Plant</li>
+          <li><i class="fa-solid fa-leaf icon-glow"></i> Peace Lily</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-sun-bright icon-spin"></i> Direct Sunlight Lovers</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-sun icon-spin"></i> Adenium</li>
+          <li><i class="fa-solid fa-sun icon-spin"></i> Rosemary</li>
+          <li><i class="fa-solid fa-sun icon-spin"></i> Lavender</li>
+          <li><i class="fa-solid fa-sun icon-spin"></i> Aloe Vera</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-cloud icon-bounce"></i> Low Light Survivors</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-leaf icon-animate"></i> Snake Plant</li>
+          <li><i class="fa-solid fa-leaf icon-animate"></i> ZZ Plant</li>
+        </ul>
+      </div>
+
+      <!-- PESTS -->
+      <div class="tab-content" id="pests">
+        <h2><i class="fa-solid fa-bug icon-pulse"></i> Pests & Common Problems</h2>
+
+        <h3><i class="fa-solid fa-virus icon-pulse"></i> Mealybugs</h3>
+        <p>White cotton-like insects — remove using neem oil spray.</p>
+
+        <h3><i class="fa-solid fa-mosquito icon-bounce"></i> Fungus Gnats</h3>
+        <p>Tiny flying insects around soil — fix by letting soil dry.</p>
+
+        <h3><i class="fa-solid fa-skull-crossbones icon-glow"></i> Root Rot</h3>
+        <p>Caused by overwatering — repot with well-draining soil.</p>
+
+        <h3><i class="fa-solid fa-fire-flame-curved icon-animate"></i> Sunburn</h3>
+        <p>Brown patches — move plant away from harsh afternoon sun.</p>
+      </div>
+
+      <!-- SEASONAL CARE -->
+      <div class="tab-content" id="season">
+        <h2><i class="fa-solid fa-cloud-sun icon-spin"></i> Seasonal Care Guide</h2>
+
+        <h3><i class="fa-solid fa-sun icon-spin"></i> Summer</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-temperature-high icon-animate"></i> Water morning/evening.</li>
+          <li><i class="fa-solid fa-umbrella-beach icon-bounce"></i> Give shade to soft plants.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-cloud-rain icon-pulse"></i> Monsoon</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-water icon-animate"></i> Reduce watering.</li>
+          <li><i class="fa-solid fa-bacteria icon-glow"></i> Watch for fungus.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-snowflake icon-spin"></i> Winter</h3>
+        <ul class="tips-list">
+          <li><i class="fa-solid fa-mug-hot icon-animate"></i> Use warm water.</li>
+          <li><i class="fa-solid fa-house-chimney icon-bounce"></i> Keep tropical plants warm.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tab Script -->
+  <script src="script.js"></script>
+
+  <script>
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-tab");
+
+        tabBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        tabContents.forEach(c => {
+          c.classList.remove("active");
+          if (c.id === target) c.classList.add("active");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
