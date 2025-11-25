@@ -47,10 +47,10 @@
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
           <li><a href="#wiki">Plants</a></li>
-          <li><a href="#care">Care</a></li>
-          <li><a href="#seasonal">Seasonal</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About</a></li>
 
-          <!-- UPDATED DROPDOWN WITH ALL 7 PLANTS -->
+          <!-- DROPDOWN WITH THE 7 VISIBLE PLANTS -->
           <li class="has-dropdown">
             <button class="nav-link-btn">
               Plant Pages <i class="fa-solid fa-chevron-down"></i>
@@ -160,7 +160,7 @@
         </div>
       </div>
 
-      <!-- UPDATED GRID WITH 7 PLANTS -->
+      <!-- PLANT GRID: 7 VISIBLE PLANTS -->
       <div class="plant-grid">
         <!-- Monstera -->
         <article
@@ -238,7 +238,7 @@
           data-tags="balcony holy basil medicinal fragrant outdoor puja"
         >
           <img
-            src="https://i.ibb.co/WWDYV8B9/Tulsi-Holy-Basil-Tincture-Ocimum-tenuiflorum.jpg"
+            src="images/tulsi.jpg"
             alt="Tulsi plant"
             class="plant-image"
           />
@@ -322,16 +322,31 @@
             </div>
           </div>
         </article>
-       <!-- HIDDEN PLANT: Money Plant -->
-<article
-  class="plant-card hidden-plant"
-  data-name="Money Plant"
-  data-tags="pothos indoor vine low light beginner"
-  style="display:none;"
->
-  <a href="money-plant.html"></a>
-</article>
- 
+
+        <!-- HIDDEN PLANT: MONEY PLANT (only appears via search) -->
+        <article
+          class="plant-card"
+          data-name="Money Plant"
+          data-tags="pothos indoor vine low light beginner hidden"
+          style="display:none;"
+        >
+          <img
+            src="images/money-plant.jpg"
+            alt="Money Plant"
+            class="plant-image"
+          />
+          <div class="plant-body">
+            <h3>Money Plant</h3>
+            <div class="plant-tags">Indoor · Vine · Low light</div>
+            <p class="plant-info">
+              A fast-growing trailing vine that does well in low to medium light and is easy to propagate.
+            </p>
+            <div class="plant-actions">
+              <a href="money-plant.html" class="btn btn-small">More details</a>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -430,6 +445,8 @@
         <a href="#wiki">Plant wiki</a>
         <a href="#care">Care basics</a>
         <a href="#seasonal">Season guide</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
       </div>
       <div class="footer-copy">
         © <span id="year"></span> Bambotical · Built for a college project with lots of plants 🌿
