@@ -869,3 +869,63 @@ img {
   0%,100% { transform: scale(1); }
   50% { transform: scale(1.18); }
 }
+/* ABOUT PAGE */
+.about-hero {
+  padding: 5rem 1rem 3rem;
+  text-align: center;
+}
+
+.about-section {
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.about-text h2 {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--raspberry-dark);
+}
+
+.about-list li {
+  list-style: none;
+  margin: .4rem 0;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.about-section i {
+  color: var(--raspberry);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.contact-email {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.contact-icon i {
+  font-size: 1.6rem;
+  color: var(--raspberry-dark);
+  transition: .3s;
+}
+
+.contact-icon i:hover {
+  transform: translateY(-4px);
+  color: var(--raspberry);
+}
