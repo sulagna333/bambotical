@@ -655,6 +655,9 @@ section:nth-of-type(even) {
 .back-btn {
   background: var(--grapefruit);
 }
+.hidden-plant {
+  display: none !important;
+}
 
 /* =========================================
    LOADING SCREEN
