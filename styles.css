@@ -806,3 +806,66 @@ img {
     align-items: flex-start;
   }
 }
+.tips-list li {
+  list-style: none;
+  padding: .4rem 0;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.tips-list i {
+  color: var(--raspberry);
+  font-size: 1rem;
+}
+/* ===========================
+   ICON ANIMATIONS
+   =========================== */
+
+/* Soft hover lift */
+.icon-animate:hover {
+  transform: translateY(-4px);
+  transition: 0.3s ease;
+}
+
+/* Bounce animation */
+.icon-bounce {
+  animation: bounceIcon 2s infinite ease-in-out;
+}
+
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Slow rotation (used for sun, water drops etc.) */
+.icon-spin {
+  animation: spinIcon 5s linear infinite;
+}
+
+@keyframes spinIcon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Gentle glowing effect */
+.icon-glow {
+  animation: glowIcon 2s infinite ease-in-out;
+}
+
+@keyframes glowIcon {
+  0% { text-shadow: 0 0 0px rgba(255, 0, 80, 0.4); }
+  50% { text-shadow: 0 0 8px rgba(255, 0, 80, 0.6); }
+  100% { text-shadow: 0 0 0px rgba(255, 0, 80, 0.4); }
+}
+
+/* Pulse animation for warning icons */
+.icon-pulse {
+  animation: pulseIcon 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
