@@ -34,29 +34,20 @@ document.querySelectorAll(".has-dropdown").forEach((item) => {
 });
 
 /* ============================
-   SEARCH ENGINE (original filter)
+   FIXED LOADING SCREEN
 ============================ */
-const searchInput = document.getElementById("plant-search");
-const plantCards = document.querySelectorAll(".plant-card");
-const searchNote = document.getElementById("search-note");
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loading-screen");
+  if (!loader) return;
 
-if (searchInput) {
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase().trim();
-    let hasResults = false;
+  // Fade out smoothly
+  loader.style.opacity = "0";
 
-    plantCards.forEach((card) => {
-      const name = (card.dataset.name || "").toLowerCase();
-      const tags = (card.dataset.tags || "").toLowerCase();
-
-      const match = name.includes(query) || tags.includes(query);
-      card.style.display = match ? "block" : "none";
-      if (match) hasResults = true;
-    });
-
-    if (searchNote) searchNote.hidden = hasResults;
-  });
-}
+  // Fully remove after fade
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 600);
+});
 
 /* ============================
    FOOTER YEAR
@@ -78,25 +69,12 @@ function revealOnScroll() {
 
     if (elementTop < windowHeight - 100) {
       el.classList.add("active");
-    } else {
-      el.classList.remove("active");
     }
   });
 }
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
-
-/* ============================
-   LOADING SCREEN
-============================ */
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loading-screen");
-  if (!loader) return;
-  setTimeout(() => {
-    loader.classList.add("hide");
-  }, 400);
-});
 
 /* ============================
    DARK MODE
@@ -123,7 +101,7 @@ if (themeToggle) {
 }
 
 /* ============================
-   FULLSCREEN HERO BACKGROUND SLIDER
+   FULLSCREEN HERO SLIDER
 ============================ */
 const bgSlides = document.querySelectorAll(".hero-bg-slide");
 const heroDots = document.querySelectorAll(".hero-dot");
@@ -159,15 +137,14 @@ if (bgSlides.length > 0) {
     });
   });
 }
+
 /* ============================
-   SEARCH SYSTEM
+   SEARCH SYSTEM (FINAL + FIXED)
 ============================ */
 
-// Search input + results container
-const searchInput = document.getElementById("plant-search");
+const searchBox = document.getElementById("plant-search");
 const resultsList = document.getElementById("search-results");
 
-// Load hidden plant list
 const hiddenPlants = Array.from(document.querySelectorAll("#hidden-plants .plant-item")).map(
   (item) => ({
     name: item.textContent.trim(),
@@ -175,36 +152,39 @@ const hiddenPlants = Array.from(document.querySelectorAll("#hidden-plants .plant
   })
 );
 
-// Search on typing
-searchInput.addEventListener("input", () => {
-  const value = searchInput.value.toLowerCase().trim();
-  resultsList.innerHTML = "";
+if (searchBox) {
+  searchBox.addEventListener("input", () => {
+    const value = searchBox.value.toLowerCase().trim();
+    resultsList.innerHTML = "";
 
-  if (value.length === 0) {
-    resultsList.style.display = "none";
-    return;
-  }
+    if (value.length === 0) {
+      resultsList.style.display = "none";
+      return;
+    }
 
-  const matches = hiddenPlants.filter((plant) =>
-    plant.name.toLowerCase().includes(value)
-  );
+    const matches = hiddenPlants.filter((plant) =>
+      plant.name.toLowerCase().includes(value)
+    );
 
-  resultsList.style.display = "block";
+    resultsList.style.display = "block";
 
-  if (matches.length === 0) {
-    resultsList.innerHTML = `<li class="result-item no-result">No matches found</li>`;
-    return;
-  }
+    if (matches.length === 0) {
+      resultsList.innerHTML = `<li class="result-item no-result">No matches found</li>`;
+      return;
+    }
 
-  matches.forEach((plant) => {
-    const li = document.createElement("li");
-    li.className = "result-item";
-    li.innerHTML = `<a href="${plant.link}">${plant.name}</a>`;
-    resultsList.appendChild(li);
+    matches.forEach((plant) => {
+      const li = document.createElement("li");
+      li.className = "result-item";
+      li.innerHTML = `<a href="${plant.link}">${plant.name}</a>`;
+      resultsList.appendChild(li);
+    });
   });
-});
 
-// Hide results when clicking outside
-document.addEventListener("click", (e) => {
-  if (!searchInput.contains(e.target)) {
-    resultsList.style.display = "none";
+  // Hide dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!searchBox.contains(e.target)) {
+      resultsList.style.display = "none";
+    }
+  });
+}
