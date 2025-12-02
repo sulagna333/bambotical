@@ -159,67 +159,52 @@ if (bgSlides.length > 0) {
     });
   });
 }
-
 /* ============================
-   SEARCH DROPDOWN (NEW)
+   SEARCH SYSTEM
 ============================ */
-const searchResults = document.getElementById("search-results");
 
-const plantMap = {
-  "monstera deliciosa": "monstera.html",
-  "snake plant": "snake-plant.html",
-  "aloe vera": "aloe-vera.html",
-  "tulsi": "tulsi.html",
-  "rosemary": "rosemary.html",
-  "lavender": "lavender.html",
-  "adenium": "adenium.html",
-  "money plant": "money-plant.html",
-  "pothos": "money-plant.html",
-   "Rose" : "rose.html",
-   "Hibiscus" : "hibiscus.html",
-    "Marigold" : "marigold.html",
-    "Jasmine" : "jasmine.html",
-   "Bougainvillea" : "bougaivillea.html",
+// Search input + results container
+const searchInput = document.getElementById("plant-search");
+const resultsList = document.getElementById("search-results");
 
-};
+// Load hidden plant list
+const hiddenPlants = Array.from(document.querySelectorAll("#hidden-plants .plant-item")).map(
+  (item) => ({
+    name: item.textContent.trim(),
+    link: item.getAttribute("data-link"),
+  })
+);
 
-if (searchInput && searchResults) {
-  searchInput.addEventListener("input", () => {
-    const q = searchInput.value.toLowerCase().trim();
-    searchResults.innerHTML = "";
-    searchResults.classList.remove("show");
+// Search on typing
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase().trim();
+  resultsList.innerHTML = "";
 
-    if (q.length === 0) return;
-
-    let matches = [];
-
-    plantCards.forEach((card) => {
-      const name = card.dataset.name.toLowerCase();
-      const tags = card.dataset.tags.toLowerCase();
-
-      if (name.includes(q) || tags.includes(q)) {
-        matches.push(name);
-      }
-    });
-
-    if (matches.length > 0) {
-      matches.forEach((name) => {
-        const li = document.createElement("li");
-        li.textContent = name.replace(/\b\w/g, (c) => c.toUpperCase());
-        li.addEventListener("click", () => {
-          window.location.href = plantMap[name];
-        });
-        searchResults.appendChild(li);
-      });
-
-      searchResults.classList.add("show");
-    }
-  });
-}
-
-/* Close dropdown when clicking outside */
-document.addEventListener("click", (e) => {
-  if (e.target !== searchInput) {
-    searchResults.classList.remove("show");
+  if (value.length === 0) {
+    resultsList.style.display = "none";
+    return;
   }
+
+  const matches = hiddenPlants.filter((plant) =>
+    plant.name.toLowerCase().includes(value)
+  );
+
+  resultsList.style.display = "block";
+
+  if (matches.length === 0) {
+    resultsList.innerHTML = `<li class="result-item no-result">No matches found</li>`;
+    return;
+  }
+
+  matches.forEach((plant) => {
+    const li = document.createElement("li");
+    li.className = "result-item";
+    li.innerHTML = `<a href="${plant.link}">${plant.name}</a>`;
+    resultsList.appendChild(li);
+  });
 });
+
+// Hide results when clicking outside
+document.addEventListener("click", (e) => {
+  if (!searchInput.contains(e.target)) {
+    resultsList.style.display = "none";
