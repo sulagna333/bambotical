@@ -171,4 +171,50 @@ if (bgSlides.length > 0) {
     });
   });
 }
+const searchInput = document.getElementById("plant-search");
+const searchResults = document.getElementById("search-results");
+const plantCards = document.querySelectorAll(".plant-card");
+
+const plantMap = {
+  "monstera deliciosa": "monstera.html",
+  "snake plant": "snake-plant.html",
+  "aloe vera": "aloe-vera.html",
+  "tulsi": "tulsi.html",
+  "rosemary": "rosemary.html",
+  "lavender": "lavender.html",
+  "adenium": "adenium.html",
+  "money plant": "money-plant.html",
+  "pothos": "money-plant.html"
+};
+
+searchInput.addEventListener("input", () => {
+  const q = searchInput.value.toLowerCase().trim();
+  searchResults.innerHTML = "";
+  searchResults.classList.remove("show");
+
+  if (q.length === 0) return;
+
+  let matches = [];
+
+  plantCards.forEach((card) => {
+    const name = card.dataset.name.toLowerCase();
+    const tags = card.dataset.tags.toLowerCase();
+
+    if (name.includes(q) || tags.includes(q)) {
+      matches.push(name);
+    }
+  });
+
+  if (matches.length > 0) {
+    matches.forEach((name) => {
+      const li = document.createElement("li");
+      li.textContent = name.replace(/\b\w/g, (c) => c.toUpperCase());
+      li.addEventListener("click", () => {
+        window.location.href = plantMap[name];
+      });
+      searchResults.appendChild(li);
+    });
+    searchResults.classList.add("show");
+  }
+});
 
