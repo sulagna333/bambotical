@@ -35,39 +35,78 @@ document.querySelectorAll(".has-dropdown").forEach((item) => {
 });
 
 /* ============================
-   SEARCH ENGINE (Hidden Plants Supported)
+   SEARCH ENGINE + DROPDOWN
 ============================ */
 const searchInput = document.getElementById("plant-search");
+const searchResults = document.getElementById("search-results");
 const plantCards = document.querySelectorAll(".plant-card");
 const searchNote = document.getElementById("search-note");
+
+// Map plant names → URLs
+const plantMap = {
+  "monstera deliciosa": "monstera.html",
+  "snake plant": "snake-plant.html",
+  "aloe vera": "aloe-vera.html",
+  "tulsi": "tulsi.html",
+  "holy basil": "tulsi.html",
+  "rosemary": "rosemary.html",
+  "lavender": "lavender.html",
+  "adenium": "adenium.html",
+  "desert rose": "adenium.html",
+  "money plant": "money-plant.html",
+  "pothos": "money-plant.html"
+};
 
 if (searchInput) {
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase().trim();
-    let matchFound = false;
+    searchResults.innerHTML = "";
+    searchResults.classList.remove("show");
+
+    if (query.length === 0) {
+      searchNote.hidden = true;
+      return;
+    }
+
+    let matches = [];
 
     plantCards.forEach((card) => {
       const name = (card.dataset.name || "").toLowerCase();
       const tags = (card.dataset.tags || "").toLowerCase();
 
-      const matches =
-        query.length === 0 ||
-        name.includes(query) ||
-        tags.includes(query);
-
-      if (matches) {
-        card.style.display = "block"; // Shows hidden plants when matched
-        matchFound = true;
+      if (name.includes(query) || tags.includes(query)) {
+        matches.push(name);
+        card.style.display = "block";
       } else {
         card.style.display = "none";
       }
     });
 
-    if (searchNote) {
-      searchNote.hidden = matchFound || query.length === 0;
+    searchNote.hidden = matches.length > 0;
+
+    // Build dropdown results
+    if (matches.length > 0) {
+      matches.forEach((name) => {
+        const li = document.createElement("li");
+        li.textContent = name.replace(/\b\w/g, (c) => c.toUpperCase());
+        li.addEventListener("click", () => {
+          const url = plantMap[name];
+          if (url) window.location.href = url;
+        });
+        searchResults.appendChild(li);
+      });
+
+      searchResults.classList.add("show");
     }
   });
 }
+
+/* Close search dropdown when clicking elsewhere */
+document.addEventListener("click", (e) => {
+  if (e.target !== searchInput) {
+    searchResults.classList.remove("show");
+  }
+});
 
 /* ============================
    FOOTER YEAR
@@ -110,13 +149,11 @@ window.addEventListener("load", () => {
 });
 
 /* ============================
-   DARK MODE (Fixed)
-   Uses class "dark" from CSS
+   DARK MODE
 ============================ */
 const themeToggle = document.getElementById("theme-toggle");
 
 if (themeToggle) {
-  // Apply saved theme
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
     themeToggle.textContent = "☀️";
@@ -136,15 +173,16 @@ if (themeToggle) {
 }
 
 /* ============================
-   HERO IMAGE SLIDER (6 images)
+   FULLSCREEN HERO BACKGROUND SLIDER (NEW)
 ============================ */
-const heroSlides = document.querySelectorAll(".hero-slide");
+const bgSlides = document.querySelectorAll(".hero-bg-slide");
 const heroDots = document.querySelectorAll(".hero-dot");
-let heroCurrent = 0;
-let heroTimer;
 
-function showHeroSlide(index) {
-  heroSlides.forEach((slide, i) => {
+let currentSlide = 0;
+let heroInterval;
+
+function showSlide(index) {
+  bgSlides.forEach((slide, i) => {
     slide.classList.toggle("active", i === index);
   });
 
@@ -152,22 +190,22 @@ function showHeroSlide(index) {
     dot.classList.toggle("active", i === index);
   });
 
-  heroCurrent = index;
+  currentSlide = index;
 }
 
-function nextHeroSlide() {
-  const next = (heroCurrent + 1) % heroSlides.length;
-  showHeroSlide(next);
+function autoNextSlide() {
+  const next = (currentSlide + 1) % bgSlides.length;
+  showSlide(next);
 }
 
-if (heroSlides.length > 0) {
-  heroTimer = setInterval(nextHeroSlide, 6000);
+if (bgSlides.length > 0) {
+  heroInterval = setInterval(autoNextSlide, 6000);
 
   heroDots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
-      clearInterval(heroTimer);
-      showHeroSlide(i);
-      heroTimer = setInterval(nextHeroSlide, 6000);
+      clearInterval(heroInterval);
+      showSlide(i);
+      heroInterval = setInterval(autoNextSlide, 6000);
     });
   });
 }
