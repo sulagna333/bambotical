@@ -28,14 +28,13 @@ document.querySelectorAll(".has-dropdown").forEach((item) => {
     dropdown.classList.toggle("open");
   });
 
-  // Close dropdown when clicking outside
   document.addEventListener("click", () => {
     dropdown.classList.remove("open");
   });
 });
 
 /* ============================
-   SEARCH ENGINE (Hidden Plants Supported)
+   SEARCH ENGINE (original filter)
 ============================ */
 const searchInput = document.getElementById("plant-search");
 const plantCards = document.querySelectorAll(".plant-card");
@@ -44,28 +43,18 @@ const searchNote = document.getElementById("search-note");
 if (searchInput) {
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase().trim();
-    let matchFound = false;
+    let hasResults = false;
 
     plantCards.forEach((card) => {
       const name = (card.dataset.name || "").toLowerCase();
       const tags = (card.dataset.tags || "").toLowerCase();
 
-      const matches =
-        query.length === 0 ||
-        name.includes(query) ||
-        tags.includes(query);
-
-      if (matches) {
-        card.style.display = "block"; // Shows hidden plants when matched
-        matchFound = true;
-      } else {
-        card.style.display = "none";
-      }
+      const match = name.includes(query) || tags.includes(query);
+      card.style.display = match ? "block" : "none";
+      if (match) hasResults = true;
     });
 
-    if (searchNote) {
-      searchNote.hidden = matchFound || query.length === 0;
-    }
+    if (searchNote) searchNote.hidden = hasResults;
   });
 }
 
@@ -110,13 +99,11 @@ window.addEventListener("load", () => {
 });
 
 /* ============================
-   DARK MODE (Fixed)
-   Uses class "dark" from CSS
+   DARK MODE
 ============================ */
 const themeToggle = document.getElementById("theme-toggle");
 
 if (themeToggle) {
-  // Apply saved theme
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
     themeToggle.textContent = "☀️";
@@ -134,46 +121,49 @@ if (themeToggle) {
     }
   });
 }
+
 /* ============================
    FULLSCREEN HERO BACKGROUND SLIDER
 ============================ */
 const bgSlides = document.querySelectorAll(".hero-bg-slide");
-const bgDots = document.querySelectorAll(".hero-dot");
+const heroDots = document.querySelectorAll(".hero-dot");
 
-let bgIndex = 0;
-let bgTimer;
+let currentSlide = 0;
+let heroInterval;
 
-function showBgSlide(index) {
+function showSlide(index) {
   bgSlides.forEach((slide, i) => {
     slide.classList.toggle("active", i === index);
   });
 
-  bgDots.forEach((dot, i) => {
+  heroDots.forEach((dot, i) => {
     dot.classList.toggle("active", i === index);
   });
 
-  bgIndex = index;
+  currentSlide = index;
 }
 
-function nextBgSlide() {
-  const next = (bgIndex + 1) % bgSlides.length;
-  showBgSlide(next);
+function autoNextSlide() {
+  const next = (currentSlide + 1) % bgSlides.length;
+  showSlide(next);
 }
 
 if (bgSlides.length > 0) {
-  bgTimer = setInterval(nextBgSlide, 6000);
+  heroInterval = setInterval(autoNextSlide, 6000);
 
-  bgDots.forEach((dot, i) => {
+  heroDots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
-      clearInterval(bgTimer);
-      showBgSlide(i);
-      bgTimer = setInterval(nextBgSlide, 6000);
+      clearInterval(heroInterval);
+      showSlide(i);
+      heroInterval = setInterval(autoNextSlide, 6000);
     });
   });
 }
-const searchInput = document.getElementById("plant-search");
+
+/* ============================
+   SEARCH DROPDOWN (NEW)
+============================ */
 const searchResults = document.getElementById("search-results");
-const plantCards = document.querySelectorAll(".plant-card");
 
 const plantMap = {
   "monstera deliciosa": "monstera.html",
@@ -187,34 +177,43 @@ const plantMap = {
   "pothos": "money-plant.html"
 };
 
-searchInput.addEventListener("input", () => {
-  const q = searchInput.value.toLowerCase().trim();
-  searchResults.innerHTML = "";
-  searchResults.classList.remove("show");
+if (searchInput && searchResults) {
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.toLowerCase().trim();
+    searchResults.innerHTML = "";
+    searchResults.classList.remove("show");
 
-  if (q.length === 0) return;
+    if (q.length === 0) return;
 
-  let matches = [];
+    let matches = [];
 
-  plantCards.forEach((card) => {
-    const name = card.dataset.name.toLowerCase();
-    const tags = card.dataset.tags.toLowerCase();
+    plantCards.forEach((card) => {
+      const name = card.dataset.name.toLowerCase();
+      const tags = card.dataset.tags.toLowerCase();
 
-    if (name.includes(q) || tags.includes(q)) {
-      matches.push(name);
+      if (name.includes(q) || tags.includes(q)) {
+        matches.push(name);
+      }
+    });
+
+    if (matches.length > 0) {
+      matches.forEach((name) => {
+        const li = document.createElement("li");
+        li.textContent = name.replace(/\b\w/g, (c) => c.toUpperCase());
+        li.addEventListener("click", () => {
+          window.location.href = plantMap[name];
+        });
+        searchResults.appendChild(li);
+      });
+
+      searchResults.classList.add("show");
     }
   });
+}
 
-  if (matches.length > 0) {
-    matches.forEach((name) => {
-      const li = document.createElement("li");
-      li.textContent = name.replace(/\b\w/g, (c) => c.toUpperCase());
-      li.addEventListener("click", () => {
-        window.location.href = plantMap[name];
-      });
-      searchResults.appendChild(li);
-    });
-    searchResults.classList.add("show");
+/* Close dropdown when clicking outside */
+document.addEventListener("click", (e) => {
+  if (e.target !== searchInput) {
+    searchResults.classList.remove("show");
   }
 });
-
