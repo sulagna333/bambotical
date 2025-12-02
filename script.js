@@ -174,7 +174,13 @@ const plantMap = {
   "lavender": "lavender.html",
   "adenium": "adenium.html",
   "money plant": "money-plant.html",
-  "pothos": "money-plant.html"
+  "pothos": "money-plant.html",
+   "Rose" : "rose.html",
+   "Hibiscus" : "hibiscus.html",
+    "Marigold" : "marigold.html",
+    "Jasmine" : "jasmine.html",
+   "Bougainvillea" : "bougaivillea.html",
+
 };
 
 if (searchInput && searchResults) {
