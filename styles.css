@@ -1216,3 +1216,35 @@ img {
   </div>
 
 </section>
+/* =========================================
+   SEARCH DROPDOWN (NEW)
+========================================= */
+.search-results {
+  margin-top: 0.45rem;
+  background: var(--bg-elevated);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+  list-style: none;
+  display: none;
+  padding: 0.3rem 0;
+  max-height: 230px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1000;
+}
+
+.search-results.show {
+  display: block;
+}
+
+.search-results li {
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.search-results li:hover {
+  background: var(--accent-soft);
+}
