@@ -134,40 +134,41 @@ if (themeToggle) {
     }
   });
 }
-
 /* ============================
-   HERO IMAGE SLIDER (6 images)
+   FULLSCREEN HERO BACKGROUND SLIDER
 ============================ */
-const heroSlides = document.querySelectorAll(".hero-slide");
-const heroDots = document.querySelectorAll(".hero-dot");
-let heroCurrent = 0;
-let heroTimer;
+const bgSlides = document.querySelectorAll(".hero-bg-slide");
+const bgDots = document.querySelectorAll(".hero-dot");
 
-function showHeroSlide(index) {
-  heroSlides.forEach((slide, i) => {
+let bgIndex = 0;
+let bgTimer;
+
+function showBgSlide(index) {
+  bgSlides.forEach((slide, i) => {
     slide.classList.toggle("active", i === index);
   });
 
-  heroDots.forEach((dot, i) => {
+  bgDots.forEach((dot, i) => {
     dot.classList.toggle("active", i === index);
   });
 
-  heroCurrent = index;
+  bgIndex = index;
 }
 
-function nextHeroSlide() {
-  const next = (heroCurrent + 1) % heroSlides.length;
-  showHeroSlide(next);
+function nextBgSlide() {
+  const next = (bgIndex + 1) % bgSlides.length;
+  showBgSlide(next);
 }
 
-if (heroSlides.length > 0) {
-  heroTimer = setInterval(nextHeroSlide, 6000);
+if (bgSlides.length > 0) {
+  bgTimer = setInterval(nextBgSlide, 6000);
 
-  heroDots.forEach((dot, i) => {
+  bgDots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
-      clearInterval(heroTimer);
-      showHeroSlide(i);
-      heroTimer = setInterval(nextHeroSlide, 6000);
+      clearInterval(bgTimer);
+      showBgSlide(i);
+      bgTimer = setInterval(nextBgSlide, 6000);
     });
   });
 }
+
