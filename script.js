@@ -40,10 +40,8 @@ window.addEventListener("load", () => {
   const loader = document.getElementById("loading-screen");
   if (!loader) return;
 
-  // Fade out smoothly
   loader.style.opacity = "0";
 
-  // Fully remove after fade
   setTimeout(() => {
     loader.style.display = "none";
   }, 600);
@@ -139,18 +137,17 @@ if (bgSlides.length > 0) {
 }
 
 /* ============================
-   SEARCH SYSTEM (FINAL + FIXED)
+   SEARCH SYSTEM
 ============================ */
-
 const searchBox = document.getElementById("plant-search");
 const resultsList = document.getElementById("search-results");
 
-const hiddenPlants = Array.from(document.querySelectorAll("#hidden-plants .plant-item")).map(
-  (item) => ({
-    name: item.textContent.trim(),
-    link: item.getAttribute("data-link"),
-  })
-);
+const hiddenPlants = Array.from(
+  document.querySelectorAll("#hidden-plants .plant-item")
+).map((item) => ({
+  name: item.textContent.trim(),
+  link: item.getAttribute("data-link"),
+}));
 
 if (searchBox) {
   searchBox.addEventListener("input", () => {
@@ -169,7 +166,8 @@ if (searchBox) {
     resultsList.style.display = "block";
 
     if (matches.length === 0) {
-      resultsList.innerHTML = `<li class="result-item no-result">No matches found</li>`;
+      resultsList.innerHTML =
+        '<li class="result-item no-result">No matches found</li>';
       return;
     }
 
@@ -181,7 +179,6 @@ if (searchBox) {
     });
   });
 
-  // Hide dropdown when clicking outside
   document.addEventListener("click", (e) => {
     if (!searchBox.contains(e.target)) {
       resultsList.style.display = "none";
