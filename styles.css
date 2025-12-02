@@ -1182,40 +1182,7 @@ img {
     justify-content: flex-start;
   }
 }
-<section class="hero-fullscreen">
 
-  <div class="hero-bg-slide active" style="background-image:url('https://i.ibb.co/Vpbp59Db/download-8.jpg');"></div>
-  <div class="hero-bg-slide" style="background-image:url('https://i.ibb.co/nMZjt4b0/image.jpg');"></div>
-  <div class="hero-bg-slide" style="background-image:url('https://i.ibb.co/qFJ1Tfh6/download-9.jpg');"></div>
-  <div class="hero-bg-slide" style="background-image:url('https://i.ibb.co/whJqQCp2/download-7.jpg');"></div>
-  <div class="hero-bg-slide" style="background-image:url('https://i.ibb.co/fVPHj3Z7/download-4.jpg');"></div>
-  <div class="hero-bg-slide" style="background-image:url('https://i.ibb.co/BVhNJnYD/10-of-the-best-spring-flowers.jpg');"></div>
-
-  <div class="hero-overlay">
-      <div class="container hero-centered">
-          <div class="hero-glass">
-            <p class="eyebrow">Bambotical · Plant Wiki</p>
-            <h1>Find plants that match your light, routine & space.</h1>
-
-            <p class="hero-subtitle">Search any plant or scroll down to explore the wiki.</p>
-
-            <div class="top-search-box">
-              <div class="search-box-large">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input id="plant-search" type="text" placeholder="Search plants..." />
-              </div>
-              <ul id="search-results" class="search-results"></ul>
-            </div>
-
-            <div class="hero-actions">
-              <a href="#wiki" class="btn">Browse all plants</a>
-              <a href="resources.html" class="btn btn-secondary">Care resources</a>
-            </div>
-          </div>
-      </div>
-  </div>
-
-</section>
 /* =========================================
    SEARCH DROPDOWN (NEW)
 ========================================= */
@@ -1247,4 +1214,62 @@ img {
 
 .search-results li:hover {
   background: var(--accent-soft);
+}
+/* =========================================
+   FULLSCREEN HERO BACKGROUND SLIDER
+========================================= */
+
+.hero-fullscreen {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.55)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.hero-centered {
+  z-index: 10;
+  width: 100%;
+  max-width: 850px;
+  text-align: center;
+}
+
+.hero-glass {
+  background: rgba(255,255,255,0.18);
+  padding: 2.3rem 2rem;
+  border-radius: 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
