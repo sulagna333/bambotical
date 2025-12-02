@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Bambotical</title>
+  <title>About · Bambotical</title>
 
-  <!-- Fonts + Icons -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -13,32 +15,26 @@
     rel="stylesheet"
   />
 
+  <!-- Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
-
-  <link rel="stylesheet" href="styles.css" />
 </head>
+<body>
 
-<body class="about-page">
-
-  <!-- Loader -->
-  <div id="loading-screen">
-    <div class="loader-wrapper">
-      <div class="loader-circle"></div>
-      <div class="loader-text">Bambotical</div>
-    </div>
-  </div>
-
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
-        <div class="brand-mark">B</div>
+        <img
+          src="https://i.ibb.co/XfmGnGzd/download-3.jpg"
+          class="brand-logo"
+          alt="Bambotical Logo"
+        />
         <div>
           <div class="brand-name">Bambotical</div>
-          <div class="brand-tagline">Your friendly plant wiki</div>
+          <div class="brand-tagline">Plant Wiki</div>
         </div>
       </a>
 
@@ -47,74 +43,133 @@
           <li><a href="index.html#hero">Home</a></li>
           <li><a href="index.html#wiki">Plants</a></li>
           <li><a href="resources.html">Resources</a></li>
-          <li><a href="about.html" class="active-link">About</a></li>
+          <li><a class="active-link" href="about.html">About</a></li>
+
+          <li class="has-dropdown">
+            <button class="nav-link-btn">
+              Plant Pages <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <ul class="nav-dropdown">
+              <li><a href="monstera.html">Monstera</a></li>
+              <li><a href="snake-plant.html">Snake Plant</a></li>
+              <li><a href="aloe-vera.html">Aloe Vera</a></li>
+              <li><a href="tulsi.html">Tulsi</a></li>
+              <li><a href="rosemary.html">Rosemary</a></li>
+              <li><a href="lavender.html">Lavender</a></li>
+              <li><a href="adenium.html">Adenium</a></li>
+              <li><a href="money-plant.html">Money Plant</a></li>
+            </ul>
+          </li>
         </ul>
 
         <button id="theme-toggle" class="theme-btn">🌙</button>
 
-        <button class="nav-toggle"><span></span><span></span><span></span></button>
+        <button class="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="about-hero">
+  <!-- HERO (glass small hero) -->
+  <section class="hero-fullscreen" style="height: 55vh;">
+    <!-- background (pick one stable image) -->
+    <div class="hero-bg-slide active"
+      style="background-image:url('https://i.ibb.co/Vpbp59Db/download-8.jpg');">
+    </div>
+
+    <div class="hero-overlay">
+      <div class="container hero-centered">
+        <div class="hero-glass">
+          <h1>About Bambotical</h1>
+          <p class="hero-subtitle">
+            A simple, student-friendly plant wiki for beginners and plant lovers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <section id="about-page" class="reveal">
     <div class="container">
-      <h1>About Bambotical</h1>
-      <p class="hero-subtitle">
-        A simple, beginner-friendly plant wiki designed to help you understand, grow, and care for everyday plants.
-      </p>
+
+      <div class="about-hero">
+        <h2>Why I Created Bambotical</h2>
+        <p>
+          Bambotical was built with one goal — to make plant learning easy,
+          aesthetic, and beginner-friendly. Whether you’re a student, a busy
+          adult, or a new plant parent, this wiki is designed to give you clear,
+          simple, and reliable plant guidance.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-card reveal">
+          <h3>Simple Notes</h3>
+          <p>
+            Every plant entry is written like a quick revision sheet — short,
+            clean, and focused on what actually matters: watering, sunlight,
+            soil, and common issues.
+          </p>
+        </div>
+
+        <div class="about-card reveal">
+          <h3>Made for Beginners</h3>
+          <p>
+            No scientific confusion. Just practical advice designed for people
+            who are learning plants for the first time or for college projects.
+          </p>
+        </div>
+
+        <div class="about-card reveal">
+          <h3>Clean Beautiful UI</h3>
+          <p>
+            The entire website is built with neat layouts, modern cards,
+            glassmorphism effects, search suggestions, and soft animations.
+          </p>
+        </div>
+
+        <div class="about-card reveal">
+          <h3>Updated Plant Library</h3>
+          <p>
+            More plants are added gradually — including herbs, indoor plants,
+            balcony favorites, and low-maintenance options for students.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CONTACT BOX -->
+      <div class="contact-box reveal">
+        <h3>Contact</h3>
+        <p>
+          Have feedback or want to suggest a new plant?  
+          Email me at: <strong>bambotical@gmail.com</strong>
+        </p>
+      </div>
+
     </div>
   </section>
 
-  <!-- About Body -->
-  <section class="about-section container reveal">
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="container footer-inner">
+      <span class="brand-name">Bambotical</span>
 
-    <div class="about-text">
-      <h2><i class="fa-solid fa-seedling"></i> Our Mission</h2>
-      <p>
-        Bambotical was created to make plant learning easier for everyone — whether you're a beginner or an enthusiastic plant lover.
-        Our goal is to provide clear, easy-to-understand information about different plants, their care, and how to help them thrive.
-      </p>
+      <div class="footer-links">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#wiki">Plant wiki</a>
+        <a href="resources.html">Resources</a>
+        <a href="#about-page">About</a>
+      </div>
 
-      <h2><i class="fa-solid fa-leaf"></i> Why We Built This</h2>
-      <p>
-        Many people struggle with plant care simply because they don’t know the basics. Our platform solves this by giving:
-      </p>
-      <ul class="about-list">
-        <li><i class="fa-solid fa-book-open"></i> Simple plant explanations</li>
-        <li><i class="fa-solid fa-sun"></i> Light and watering guides</li>
-        <li><i class="fa-solid fa-palette"></i> Clean, beginner-friendly design</li>
-        <li><i class="fa-solid fa-magnifying-glass"></i> A smart searchable plant wiki</li>
-      </ul>
-
-      <h2><i class="fa-solid fa-user"></i> Behind Bambotical</h2>
-      <p>
-        This website was designed and developed as a part of an academic project with the purpose of learning UI/UX, web development,
-        and modern responsive design. Every page, animation, and component was built with attention to detail.
-      </p>
+      <div class="footer-copy">
+        © <span id="year"></span> Bambotical · Built with love 🌿
+      </div>
     </div>
-
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section container reveal">
-    <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
-    <p>If you’d like to reach out, feel free to email:</p>
-
-    <p class="contact-email">
-      <i class="fa-solid fa-paper-plane"></i>
-      <a href="mailto:your-email@example.com">sushreesulagnabarik@gmail.com</a>
-    </p>
-
-    <p>or connect through:</p>
-
-    <div class="contact-icons">
-      <a href="#" class="contact-icon"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" class="contact-icon"><i class="fa-brands fa-github"></i></a>
-      <a href="#" class="contact-icon"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </section>
+  </footer>
 
   <script src="script.js"></script>
 </body>
